@@ -1,0 +1,1612 @@
+<html>
+  <head>
+    <title>Classroom Module</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="" />
+    <meta name="author" content="templatemo">
+    <meta charset="UTF-8">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+    </script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js">
+    </script>
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <link href="/static/styles.css" rel="stylesheet">
+
+    <link href="../static/css/sb-admin.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Comfortaa:400,700' rel='stylesheet' type='text/css'>
+    <link href="../statics/font-awesome.min.css" rel="stylesheet" type="text/css">  
+    <link href="../static/slider/flexslider.css" rel="stylesheet" type="text/css" media="screen" />
+
+
+
+    <!-- Modernizr -->
+    <script src="slider/modernizr.js"></script>
+
+  </head>
+  <body>
+
+
+<div id="wrapper">
+
+  <!-- Sidebar -->
+  <nav class="collapse navbar-collapse navbar navbar-inverse navbar-fixed-top navbar-main-collapse" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Classroom Module</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav side-nav">
+        <li class="active"><a href="index.html"><i class="fa fa-dashboard"></i> Students</a></li>
+        <li class="page-scroll"><a href="charts.html"><i class="fa fa-bar-chart-o"></i> Analytics</a></li>
+
+        <li><a href="forms.html"><i class="fa fa-edit"></i> Subject 2</a></li>
+        <li><a href="typography.html"><i class="fa fa-font"></i> Whatever you want</a></li>
+
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-square-o-down"></i> Dropdown <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Dropdown Item</a></li>
+            <li><a href="#">Another Item</a></li>
+            <li><a href="#">Third Item</a></li>
+            <li><a href="#">Last Item</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right navbar-user">
+        <li class="dropdown messages-dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> Messages <span class="badge">7</span> <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li class="dropdown-header">7 New Messages</li>
+            <li class="message-preview">
+              <a href="#">
+                <span class="avatar"><img src="http://placehold.it/50x50"></span>
+                <span class="name">Samir Seetal:</span>
+                <span class="message">Hey guys, I have a new baby...</span>
+                <span class="time"><i class="fa fa-clock-o"></i> 4:34 PM</span>
+              </a>
+            </li>
+            <li class="divider"></li>
+            <li class="message-preview">
+              <a href="#">
+                <span class="avatar"><img src="http://placehold.it/50x50"></span>
+                <span class="name">Daryl Rodrigo:</span>
+                <span class="message">Sweet</span>
+                <span class="time"><i class="fa fa-clock-o"></i> 4:34 PM</span>
+              </a>
+            </li>
+            <li class="divider"></li>
+            <li class="message-preview">
+              <a href="#">
+                <span class="avatar"><img src="http://placehold.it/50x50"></span>
+                <span class="name">Ed Wiles</span>
+                <span class="message">Hi</span>
+                <span class="time"><i class="fa fa-clock-o"></i> 4:34 PM</span>
+              </a>
+            </li>
+            <li class="divider"></li>
+            <li><a href="#">View Inbox <span class="badge">7</span></a></li>
+          </ul>
+        </li>
+        <li class="dropdown alerts-dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> Alerts <span class="badge">3</span> <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Default <span class="label label-default">Default</span></a></li>
+            <li><a href="#">Primary <span class="label label-primary">Primary</span></a></li>
+            <li><a href="#">Success <span class="label label-success">Success</span></a></li>
+            <li><a href="#">Info <span class="label label-info">Info</span></a></li>
+            <li><a href="#">Warning <span class="label label-warning">Warning</span></a></li>
+            <li><a href="#">Danger <span class="label label-danger">Danger</span></a></li>
+            <li class="divider"></li>
+            <li><a href="#">View All</a></li>
+          </ul>
+        </li>
+        <li class="dropdown user-dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Jane Jones <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#"><i class="fa fa-user"></i> Profile</a></li>
+            <li><a href="#"><i class="fa fa-envelope"></i> Inbox <span class="badge">7</span></a></li>
+            <li><a href="#"><i class="fa fa-gear"></i> Settings</a></li>
+            <li class="divider"></li>
+            <li><a href="#"><i class="fa fa-power-off"></i> Log Out</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>  <!-- navbar-collapse -->
+  </nav>
+
+  <div id="page-wrapper">
+
+    <div class="wrap" ng-controller="StudentController">
+      <div class="btn btn-default" scroll-on-click href="#page-wrapper"> Click here for top </div>
+      <div class="btn btn-default" scroll-on-click href="#charts">click here to go to charts</div>
+    </div>
+
+
+
+
+    <div id="page-wrapper">
+      <div class="row">
+        <div class="col-lg-12">
+          <h1>
+            Classroom DashBoard 
+            <small>
+              Teacher Module
+            </small>
+          </h1>
+          
+          <div class="alert alert-success alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+              &times;
+            </button>
+            Welcome Mrs. Jones. Here is your pesonalized classroom module. Here you can analyze and track your students live progress. Enjoy.
+          </div>
+        </div>
+      </div>
+      <!-- /.row -->
+      
+      
+    </div>
+
+    <!-- CONTAINER FOR STUDENT INFO BOXES -->
+    <section id="testContainer">
+      <div class="outer_container well">
+        <div class="container" ng-app ng-controller="StudentController">
+          <div class='row'>
+            <div class="row">
+              <div class="col-md-3">
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <div class="row">
+                      <div class="col-xs-6">
+                        <!--    
+    <i class="fa fa-comments fa-5x">
+    </i>
+    -->
+                        <img src="../static/images/face-charles.png" alt="Avatar" id="stdAvatar" class="img-circle img-responsive">
+                        
+                      </div>
+                      <div class="col-xs-6 text-left" ng-model="studentName">
+                        <strong>
+                          {{studentOwen}} <br>
+                        </strong>
+                        L: {{level}}
+                        <div class="progress progress-striped">
+                          <div class="progress-bar" style="width: 45%;">
+                          </div>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <a href="#">
+                    <div class="panel-footer announcement-bottom">
+                      <div class="row">
+                        <!-- BUTTONS COL -->
+                        <div class="row" id="taskButtons">
+                          <div class="col-md-1">
+                          </div>
+                          
+                          <div class="col-md-2">
+                            <button type="submit" class="btn btn-sm btn-success" ng-click="addWrongCount()" >
+                              - 
+                            </button>
+                            
+                          </div>
+                          <div class="col-md-2">
+                            <button type="submit" class="btn btn-sm btn-success" ng-click="addRightCount()" >
+                              + 
+                            </button>
+                          </div>
+                          <div class="col-md-2">
+                            
+                            <button type="submit" class="btn btn-sm btn-success" ng-click="addRightCount()" >
+                              + 
+                            </button>
+                          </div>
+                          
+                          <div class="col-md-2">
+                            <button type="submit" class="btn btn-sm btn-success" ng-click="addWrongCount()" >
+                              - 
+                            </button>
+                          </div>
+                        </div>
+                        
+                        <div class="col-md-2">
+                          
+                        </div>
+                        
+                        <br>
+                        <!-- END BUTTONS HERE -->
+                        
+                        
+                        <!-- BUTTONS COL -->
+                        <div class="row" id="taskButtons">
+                          <div class="col-md-1">
+                          </div>
+                          
+                          <div class="col-md-2">
+                            <button type="submit" class="btn btn-sm btn-success" ng-click="addWrongCount()" >
+                              - 
+                            </button>
+                            
+                          </div>
+                          <div class="col-md-2">
+                            
+                            <button type="submit" class="btn btn-sm btn-success" ng-click="addRightCount()" >
+                              + 
+                            </button>
+                            
+                          </div>
+                          <div class="col-md-2">
+                            
+                            
+                            <button type="submit" class="btn btn-sm btn-success" ng-click="addRightCount()" >
+                              + 
+                            </button>
+                          </div>
+                          
+                          <div class="col-md-2">
+                            <button type="submit" class="btn btn-sm btn-success" ng-click="addWrongCount()" >
+                              - 
+                            </button>
+                          </div>
+                        </div>
+                        
+                        <div class="col-md-2">
+                          
+                        </div>
+                        
+                        <br>
+                        <!-- END BUTTONS HERE -->
+                      </div>
+                      
+                      
+                    </div>
+                  </a>
+                </div>
+              </div>
+              
+              
+              
+              <div class="col-md-3">
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <div class="row">
+                      <div class="col-xs-6">
+                        
+                        
+                        <!--    
+    <i class="fa fa-comments fa-5x">
+    </i>
+    -->
+                        
+                        
+                        <img src="../static/images/face-charles.png" alt="Avatar" id="stdAvatar" class="img-circle img-responsive">
+                      </div>
+                      
+                      <div class="col-xs-6 text-left">
+                        <strong>
+                          {{studentCharles}} 
+                        </strong>
+                        <br>
+                        L: {{level}}
+                        <div class="progress progress-striped">
+                          <div class="progress-bar" style="width: 45%;">
+                          </div>
+                        </div>
+                        
+                      </div>
+                      
+                    </div>
+                   </div>
+                   
+                   <a href="#">
+                     <div class="panel-footer announcement-bottom">
+                       
+                       <div class="row">
+                         
+                         
+                         <!-- BUTTONS COL -->
+                         <div class="row" id="taskButtons">
+                           <div class="col-md-1">
+                           </div>
+                           
+                           <div class="col-md-2">
+                             <button type="submit" class="btn btn-sm btn-success" ng-click="addWrongCount()" >
+                               - 
+                             </button>
+                             
+                           </div>
+                           <div class="col-md-2">
+                             
+                             <button type="submit" class="btn btn-sm btn-success" ng-click="addRightCount()" >
+                               + 
+                             </button>
+                             
+                           </div>
+                           <div class="col-md-2">
+                             
+                             
+                             <button type="submit" class="btn btn-sm btn-success" ng-click="addRightCount()" >
+                               + 
+                             </button>
+                           </div>
+                           
+                           <div class="col-md-2">
+                             <button type="submit" class="btn btn-sm btn-success" ng-click="addWrongCount()" >
+                               - 
+                             </button>
+                           </div>
+                         </div>
+                         
+                         <div class="col-md-2">
+                           
+                         </div>
+                         
+                         <br>
+                         <!-- END BUTTONS HERE -->
+                         
+                         
+                         <!-- BUTTONS COL -->
+                         <div class="row" id="taskButtons">
+                           <div class="col-md-1">
+                           </div>
+                           
+                           <div class="col-md-2">
+                             <button type="submit" class="btn btn-sm btn-success" ng-click="addWrongCount()" >
+                               - 
+                             </button>
+                             
+                           </div>
+                           <div class="col-md-2">
+                             
+                             <button type="submit" class="btn btn-sm btn-success" ng-click="addRightCount()" >
+                               + 
+                             </button>
+                             
+                           </div>
+                           <div class="col-md-2">
+                             
+                             
+                             <button type="submit" class="btn btn-sm btn-success" ng-click="addRightCount()" >
+                               + 
+                             </button>
+                           </div>
+                           
+                           <div class="col-md-2">
+                             <button type="submit" class="btn btn-sm btn-success" ng-click="addWrongCount()" >
+                               - 
+                             </button>
+                           </div>
+                         </div>
+                         
+                         <div class="col-md-2">
+                           
+                         </div>
+                         
+                         <br>
+                         <!-- END BUTTONS HERE -->
+                       </div>
+                       
+                       
+                     </div>
+                   </a>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="panel panel-success">
+                  <div class="panel-heading">
+                    <div class="row">
+                      <div class="col-xs-6">
+                        
+                        
+                        <!--    
+    <i class="fa fa-comments fa-5x">
+    </i>
+    -->
+                        
+                        
+                        <img src="../static/images/face-charles.png" alt="Avatar" id="stdAvatar" class="img-circle img-responsive">
+                      </div>
+                      
+                      <div class="col-xs-6 text-left">
+                        <strong>
+                          Charles
+                        </strong>
+                        Level 2
+                        <div class="progress progress-striped">
+                          <div class="progress-bar" style="width: 45%;">
+                          </div>
+                        </div>
+                        
+                      </div>
+                      
+                    </div>
+                  </div>
+                  
+                  <a href="#">
+                    <div class="panel-footer announcement-bottom">
+                      
+                      <div class="row">
+                        
+                        
+                        <!-- BUTTONS COL -->
+                        <div class="row" id="taskButtons">
+                          <div class="col-md-1">
+                          </div>
+                          
+                          <div class="col-md-2">
+                            <button type="submit" class="btn btn-sm btn-success" ng-click="addWrongCount()" >
+                              - 
+                            </button>
+                            
+                          </div>
+                          <div class="col-md-2">
+                            
+                            <button type="submit" class="btn btn-sm btn-success" ng-click="addRightCount()" >
+                              + 
+                            </button>
+                            
+                          </div>
+                          <div class="col-md-2">
+                            
+                            
+                            <button type="submit" class="btn btn-sm btn-success" ng-click="addRightCount()" >
+                              + 
+                            </button>
+                          </div>
+                          
+                          <div class="col-md-2">
+                            <button type="submit" class="btn btn-sm btn-success" ng-click="addWrongCount()" >
+                              - 
+                            </button>
+                          </div>
+                        </div>
+                        
+                        <div class="col-md-2">
+                          
+                        </div>
+                        
+                        <br>
+                        <!-- END BUTTONS HERE -->
+                        
+                        
+                        <!-- BUTTONS COL -->
+                        <div class="row" id="taskButtons">
+                          <div class="col-md-1">
+                          </div>
+                          
+                          <div class="col-md-2">
+                            <button type="submit" class="btn btn-sm btn-success" ng-click="addWrongCount()" >
+                              - 
+                            </button>
+                            
+                          </div>
+                          <div class="col-md-2">
+                            
+                            <button type="submit" class="btn btn-sm btn-success" ng-click="addRightCount()" >
+                              + 
+                            </button>
+                            
+                          </div>
+                          <div class="col-md-2">
+                            
+                            
+                            <button type="submit" class="btn btn-sm btn-success" ng-click="addRightCount()" >
+                              + 
+                            </button>
+                          </div>
+                          
+                          <div class="col-md-2">
+                            <button type="submit" class="btn btn-sm btn-success" ng-click="addWrongCount()" >
+                              - 
+                            </button>
+                          </div>
+                        </div>
+                        
+                        <div class="col-md-2">
+                          
+                        </div>
+                        
+                        <br>
+                        <!-- END BUTTONS HERE -->
+                      </div>
+                      
+                      
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="panel panel-danger">
+                  <div class="panel-heading">
+                    <div class="row">
+                      <div class="col-xs-6">
+                        
+                        
+                        <!--    
+    <i class="fa fa-comments fa-5x">
+    </i>
+    -->
+                        
+                        
+                        <img src="../static/images/face-charles.png" alt="Avatar" id="stdAvatar" class="img-circle img-responsive">
+                        
+                        
+                        
+                      </div>
+                      
+                      <div class="col-xs-6 text-left">
+                        <strong>
+                          Charles
+                        </strong>
+                        Level 2
+                        <div class="progress progress-striped">
+                          <div class="progress-bar" style="width: 45%;">
+                          </div>
+                        </div>
+                        
+                      </div>
+                      
+                    </div>
+                            </div>
+                            
+                            <a href="#">
+                              <div class="panel-footer announcement-bottom">
+                                
+                                <div class="row">
+                                  
+                                  
+                                  <!-- BUTTONS COL -->
+                                  <div class="row" id="taskButtons">
+                                    <div class="col-md-1">
+                                    </div>
+                                    
+                                    <div class="col-md-2">
+                                      <button type="submit" class="btn btn-sm btn-success" ng-click="addWrongCount()" >
+                                        - 
+                                      </button>
+                                      
+                                    </div>
+                                    <div class="col-md-2">
+                                      
+                                      <button type="submit" class="btn btn-sm btn-success" ng-click="addRightCount()" >
+                                        + 
+                                      </button>
+                                      
+                                    </div>
+                                    <div class="col-md-2">
+                                      
+                                      
+                                      <button type="submit" class="btn btn-sm btn-success" ng-click="addRightCount()" >
+                                        + 
+                                      </button>
+                                    </div>
+                                    
+                                    <div class="col-md-2">
+                                      <button type="submit" class="btn btn-sm btn-success" ng-click="addWrongCount()" >
+                                        - 
+                                      </button>
+                                    </div>
+                                  </div>
+                                  
+                                  <div class="col-md-2">
+                                    
+                                  </div>
+                                  
+                                  <br>
+                                  <!-- END BUTTONS HERE -->
+                                  
+                                  
+                                  <!-- BUTTONS COL -->
+                                  <div class="row" id="taskButtons">
+                                    <div class="col-md-1">
+                                    </div>
+                                    
+                                    <div class="col-md-2">
+                                      <button type="submit" class="btn btn-sm btn-success" ng-click="addWrongCount()" >
+                                        - 
+                                      </button>
+                                      
+                                    </div>
+                                    <div class="col-md-2">
+                                      
+                                      <button type="submit" class="btn btn-sm btn-success" ng-click="addRightCount()" >
+                                        + 
+                                      </button>
+                                      
+                                    </div>
+                                    <div class="col-md-2">
+                                      
+                                      
+                                      <button type="submit" class="btn btn-sm btn-success" ng-click="addRightCount()" >
+                                        + 
+                                      </button>
+                                    </div>
+                                    
+                                    <div class="col-md-2">
+                                      <button type="submit" class="btn btn-sm btn-success" ng-click="addWrongCount()" >
+                                        - 
+                                      </button>
+                                    </div>
+                                  </div>
+                                  
+                                  <div class="col-md-2">
+                                    
+                                  </div>
+                                  
+                                  <br>
+                                  <!-- END BUTTONS HERE -->
+                                </div>
+                                
+                                
+                              </div>
+                            </a>
+                </div>
+              </div>
+              </div>
+              <!-- /.row -->
+              
+              
+            </div>
+            
+            <!-- TESTING ADDING IN MORE ROWS -->
+            <div class="row">
+              <div class="col-md-3">
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <div class="row">
+                      <div class="col-xs-6">
+                        <!--    
+    <i class="fa fa-comments fa-5x">
+    </i>
+    -->
+                        <img src="../static/images/face-charles.png" alt="Avatar" id="stdAvatar" class="img-circle img-responsive">
+                        
+                      </div>
+                      <div class="col-xs-6 text-left">
+                        <strong>
+                          Charles
+                        </strong>
+                        Level 2
+                        <div class="progress progress-striped">
+                          <div class="progress-bar" style="width: 45%;">
+                          </div>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <a href="#">
+                    <div class="panel-footer announcement-bottom">
+                      <div class="row">
+                        <!-- BUTTONS COL -->
+                        <div class="row" id="taskButtons">
+                          <div class="col-md-1">
+                          </div>
+                          
+                          <div class="col-md-2">
+                            <button type="submit" class="btn btn-sm btn-success" ng-click="addWrongCount()" >
+                              - 
+                            </button>
+                            
+                          </div>
+                          <div class="col-md-2">
+                            <button type="submit" class="btn btn-sm btn-success" ng-click="addRightCount()" >
+                              + 
+                            </button>
+                          </div>
+                          <div class="col-md-2">
+                            
+                            <button type="submit" class="btn btn-sm btn-success" ng-click="addRightCount()" >
+                              + 
+                            </button>
+                          </div>
+                          
+                          <div class="col-md-2">
+                            <button type="submit" class="btn btn-sm btn-success" ng-click="addWrongCount()" >
+                              - 
+                            </button>
+                          </div>
+                        </div>
+                        
+                        <div class="col-md-2">
+                          
+                        </div>
+                        
+                        <br>
+                        <!-- END BUTTONS HERE -->
+                        
+                        
+                        <!-- BUTTONS COL -->
+                        <div class="row" id="taskButtons">
+                          <div class="col-md-1">
+                          </div>
+                          
+                          <div class="col-md-2">
+                            <button type="submit" class="btn btn-sm btn-success" ng-click="addWrongCount()" >
+                              - 
+                            </button>
+                            
+                          </div>
+                          <div class="col-md-2">
+                            
+                            <button type="submit" class="btn btn-sm btn-success" ng-click="addRightCount()" >
+                              + 
+                            </button>
+                            
+                          </div>
+                          <div class="col-md-2">
+                            
+                            
+                            <button type="submit" class="btn btn-sm btn-success" ng-click="addRightCount()" >
+                              + 
+                            </button>
+                          </div>
+                          
+                          <div class="col-md-2">
+                            <button type="submit" class="btn btn-sm btn-success" ng-click="addWrongCount()" >
+                              - 
+                            </button>
+                          </div>
+                        </div>
+                        
+                        <div class="col-md-2">
+                          
+                        </div>
+                        
+                        <br>
+                        <!-- END BUTTONS HERE -->
+                      </div>
+                      
+                      
+                    </div>
+                  </a>
+                </div>
+              </div>
+              
+              
+              
+              <div class="col-md-3">
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <div class="row">
+                      <div class="col-xs-6">
+                        
+                        
+                        <!--    
+    <i class="fa fa-comments fa-5x">
+    </i>
+    -->                    
+                        <img src="../static/images/face-samir.png" alt="Avatar" id="stdAvatar" class="img-circle img-responsive">
+                        
+                        
+                        
+                      </div>
+                      
+                      <div class="col-xs-6 text-left">
+                        <strong>
+                          Samir
+                        </strong>
+                        Level 2
+                        <div class="progress progress-striped">
+                          <div class="progress-bar" style="width: 45%;">
+                          </div>
+                        </div>
+                        
+                      </div>
+                      
+                    </div>
+                  </div>
+                  
+                  <a href="#">
+                    <div class="panel-footer announcement-bottom">
+                      
+                      <div class="row">
+                        
+                        
+                        <!-- BUTTONS COL -->
+                        <div class="row" id="taskButtons">
+                          <div class="col-md-1">
+                          </div>
+                          
+                          <div class="col-md-2">
+                            <button type="submit" class="btn btn-sm btn-success" ng-click="addWrongCount()" >
+                              - 
+                            </button>
+                            
+                          </div>
+                          <div class="col-md-2">
+                            
+                            <button type="submit" class="btn btn-sm btn-success" ng-click="addRightCount()" >
+                              + 
+                            </button>
+                            
+                          </div>
+                          <div class="col-md-2">
+                            
+                            
+                            <button type="submit" class="btn btn-sm btn-success" ng-click="addRightCount()" >
+                              + 
+                            </button>
+                          </div>
+                          
+                          <div class="col-md-2">
+                            <button type="submit" class="btn btn-sm btn-success" ng-click="addWrongCount()" >
+                              - 
+                            </button>
+                          </div>
+                        </div>
+                        
+                        <div class="col-md-2">
+                          
+                        </div>
+                        
+                        <br>
+                        <!-- END BUTTONS HERE -->
+                        
+                        
+                        <!-- BUTTONS COL -->
+                        <div class="row" id="taskButtons">
+                          <div class="col-md-1">
+                          </div>
+                          
+                          <div class="col-md-2">
+                            <button type="submit" class="btn btn-sm btn-success" ng-click="addWrongCount()" >
+                              - 
+                            </button>
+                            
+                          </div>
+                          <div class="col-md-2">
+                            
+                            <button type="submit" class="btn btn-sm btn-success" ng-click="addRightCount()" >
+                              + 
+                            </button>
+                            
+                          </div>
+                          <div class="col-md-2">
+                            
+                            
+                            <button type="submit" class="btn btn-sm btn-success" ng-click="addRightCount()" >
+                              + 
+                            </button>
+                          </div>
+                          
+                          <div class="col-md-2">
+                            <button type="submit" class="btn btn-sm btn-success" ng-click="addWrongCount()" >
+                              - 
+                            </button>
+                          </div>
+                        </div>
+                        
+                        <div class="col-md-2">
+                          
+                        </div>
+                        
+                        <br>
+                        <!-- END BUTTONS HERE -->
+                      </div>
+                      
+                      
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="panel panel-success">
+                  <div class="panel-heading">
+                    <div class="row">
+                      <div class="col-xs-6">
+                        
+                        
+                        <!--    
+    <i class="fa fa-comments fa-5x">
+    </i>
+    -->
+                        
+                        
+                        <img src="../static/images/student.png" alt="Avatar" id="stdAvatar" class="img-circle img-responsive">
+                        
+                        
+                        
+                      </div>
+                      
+                      <div class="col-xs-6 text-left">
+                        <strong>
+                          Student
+                        </strong>
+                        Level 2
+                        <div class="progress progress-striped">
+                          <div class="progress-bar" style="width: 45%;">
+                          </div>
+                        </div>
+                        
+                      </div>
+                      
+                    </div>
+                  </div>
+                  
+                  <a href="#">
+                    <div class="panel-footer announcement-bottom">
+                      
+                      <div class="row">
+                        
+                        
+                        <!-- BUTTONS COL -->
+                        <div class="row" id="taskButtons">
+                          <div class="col-md-1">
+                          </div>
+                          
+                          <div class="col-md-2">
+                            <button type="submit" class="btn btn-sm btn-success" ng-click="addWrongCount()" >
+                              - 
+                            </button>
+                            
+                          </div>
+                          <div class="col-md-2">
+                            
+                            <button type="submit" class="btn btn-sm btn-success" ng-click="addRightCount()" >
+                              + 
+                            </button>
+                            
+                          </div>
+                          <div class="col-md-2">
+                            
+                            
+                            <button type="submit" class="btn btn-sm btn-success" ng-click="addRightCount()" >
+                              + 
+                            </button>
+                          </div>
+                          
+                          <div class="col-md-2">
+                            <button type="submit" class="btn btn-sm btn-success" ng-click="addWrongCount()" >
+                              - 
+                            </button>
+                          </div>
+                        </div>
+                        
+                        <div class="col-md-2">
+                          
+                        </div>
+                        
+                        <br>
+                        <!-- END BUTTONS HERE -->
+                        
+                        
+                        <!-- BUTTONS COL -->
+                        <div class="row" id="taskButtons">
+                          <div class="col-md-1">
+                          </div>
+                          
+                          <div class="col-md-2">
+                            <button type="submit" class="btn btn-sm btn-success" ng-click="addWrongCount()" >
+                              - 
+                            </button>
+                            
+                          </div>
+                          <div class="col-md-2">
+                            
+                            <button type="submit" class="btn btn-sm btn-success" ng-click="addRightCount()" >
+                              + 
+                            </button>
+                            
+                          </div>
+                          <div class="col-md-2">
+                            
+                            
+                            <button type="submit" class="btn btn-sm btn-success" ng-click="addRightCount()" >
+                              + 
+                            </button>
+                          </div>
+                          
+                          <div class="col-md-2">
+                            <button type="submit" class="btn btn-sm btn-success" ng-click="addWrongCount()" >
+                              - 
+                            </button>
+                          </div>
+                        </div>
+                        
+                        <div class="col-md-2">
+                          
+                        </div>
+                        
+                        <br>
+                        <!-- END BUTTONS HERE -->
+                      </div>
+                      
+                      
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="panel panel-danger">
+                  <div class="panel-heading">
+                    <div class="row">
+                      <div class="col-xs-6">
+                        
+                        
+                        <!--    
+    <i class="fa fa-comments fa-5x">
+    </i>
+    -->
+                        
+                        
+                        <img src="../static/images/gamification.png" alt="Avatar" id="stdAvatar" class="img-circle img-responsive">
+                        
+                        
+                        
+                      </div>
+                      
+                      <div class="col-xs-6 text-left">
+                        <strong>
+                          Charles
+                        </strong>
+                        Level 2
+                        <div class="progress progress-striped">
+                          <div class="progress-bar" style="width: 45%;">
+                          </div>
+                        </div>
+                        
+                      </div>
+                      
+                    </div>
+                  </div>
+                  
+                  <a href="#">
+                    <div class="panel-footer announcement-bottom">
+                      
+                      <div class="row">
+                        
+                        
+                        <!-- BUTTONS COL -->
+                        <div class="row" id="taskButtons">
+                          <div class="col-md-1">
+                          </div>
+                          
+                          <div class="col-md-2">
+                            <button type="submit" class="btn btn-sm btn-success" ng-click="addWrongCount()" >
+                              - 
+                            </button>
+                            
+                          </div>
+                          <div class="col-md-2">
+                            
+                            <button type="submit" class="btn btn-sm btn-success" ng-click="addRightCount()" >
+                              + 
+                            </button>
+                            
+                          </div>
+                          <div class="col-md-2">
+                            
+                            
+                            <button type="submit" class="btn btn-sm btn-success" ng-click="addRightCount()" >
+                              + 
+                            </button>
+                          </div>
+                          
+                          <div class="col-md-2">
+                            <button type="submit" class="btn btn-sm btn-success" ng-click="addWrongCount()" >
+                              - 
+                            </button>
+                          </div>
+                        </div>
+                        
+                        <div class="col-md-2">
+                          
+                        </div>
+                        
+                        <br>
+                        <!-- END BUTTONS HERE -->
+                        
+                        
+                        <!-- BUTTONS COL -->
+                        <div class="row" id="taskButtons">
+                          <div class="col-md-1">
+                          </div>
+                          
+                          <div class="col-md-2">
+                            <button type="submit" class="btn btn-sm btn-success" ng-click="addWrongCount()" >
+                              - 
+                            </button>
+                            
+                          </div>
+                          <div class="col-md-2">
+                            
+                            <button type="submit" class="btn btn-sm btn-success" ng-click="addRightCount()" >
+                              + 
+                            </button>
+                            
+                          </div>
+                          <div class="col-md-2">
+                            
+                            
+                            <button type="submit" class="btn btn-sm btn-success" ng-click="addRightCount()" >
+                              + 
+                            </button>
+                          </div>
+                          
+                          <div class="col-md-2">
+                            <button type="submit" class="btn btn-sm btn-success" ng-click="addWrongCount()" >
+                              - 
+                            </button>
+                          </div>
+                        </div>
+                        
+                        <div class="col-md-2">
+                          
+                        </div>
+                        
+                        <br>
+                        <!-- END BUTTONS HERE -->
+                      </div>
+                      
+                      
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- /.row -->
+            
+            
+          </div>
+          
+          
+          
+          
+          
+        </section>
+        
+        <!-- CHARTS PORTION -->
+        
+        <section id="charts">
+          
+          <div class="jumbotron">
+            
+            <div class="row">
+              <div class="col-lg-4">
+                <div class="panel panel-primary">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">
+                      <i class="fa fa-long-arrow-right">
+                      </i>
+                      Donut Graph Students
+                    </h3>
+                  </div>
+                  <div class="panel-body">
+                    <div class="panel-body">
+                      <div id="donut-example">
+                      </div>
+                      
+                      
+                    </div>
+                    
+                    <div class="text-right">
+                      <a href="#">
+                        View Details 
+                        <i class="fa fa-arrow-circle-right">
+                        </i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-8">
+                <div class="panel panel-primary">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">
+                      <i class="fa fa-long-arrow-right">
+                      </i>
+                      Bar Graph Students 
+                    </h3>
+                  </div>
+                  <div class="panel-body">
+                    
+                    <div id="bar-example">
+                    </div>
+                    
+                    
+                    <div class="text-right">
+                      <a href="#">
+                        View Details 
+                        <i class="fa fa-arrow-circle-right">
+                        </i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /.row -->
+          </section>
+          
+
+
+    <!-- // *************************************************
+    //END OF CLASSROOM MODULE FOR DARYL   -->    
+          <section id="notifications">
+            <div class="row">
+              <div class="col-md-3">
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <div class="row">
+                      <div class="col-xs-6">
+                        <i class="fa fa-comments fa-5x">
+                        </i>
+                      </div>
+                      <div class="col-xs-6 text-right">
+                        <p class="announcement-heading">
+                          456
+                        </p>
+                        <p class="announcement-text">
+                          New Mentions!
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <a href="#">
+                    <div class="panel-footer announcement-bottom">
+                      <div class="row">
+                        <div class="col-xs-6">
+                          View Mentions
+                        </div>
+                        <div class="col-xs-6 text-right">
+                          <i class="fa fa-arrow-circle-right">
+                          </i>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="panel panel-warning">
+                  <div class="panel-heading">
+                    <div class="row">
+                      <div class="col-xs-6">
+                        <i class="fa fa-check fa-5x">
+                        </i>
+                      </div>
+                      <div class="col-xs-6 text-right">
+                        <p class="announcement-heading">
+                          12
+                        </p>
+                        <p class="announcement-text">
+                          To-Do Items
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <a href="#">
+                    <div class="panel-footer announcement-bottom">
+                      <div class="row">
+                        <div class="col-xs-6">
+                          Complete Tasks
+                        </div>
+                        <div class="col-xs-6 text-right">
+                          <i class="fa fa-arrow-circle-right">
+                          </i>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </section>
+            
+            
+            
+            <section id="graphs">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="panel panel-primary">
+                    <div class="panel-heading">
+                      <h3 class="panel-title">
+                        <i class="fa fa-bar-chart-o">
+                        </i>
+                        Class Statistics: October 1, 2013 - October 31, 2013
+                      </h3>
+                    </div>
+                    <div class="panel-body">
+                      <div id="morris-chart-area">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /.row -->
+            </div>
+            
+            <!-- JUMBOTRON
+    -->
+          </section>
+          
+          
+          <!-- SECTION FOR STUDENT INFO BOXES -->
+          
+          
+          <section id="services">
+            <div class="outer_container">
+              <div class="container">
+                <div class="row">
+                  <div class="col col-md-5 col-sm-12 col-xs-12">
+                    <h1>
+                      Student Infos
+                    </h1>
+
+
+                  </div>
+                  
+                  <div class="container">
+                    <div class="row">
+                      
+                      <div class='center-form panel'>
+                        <div class='panel-body'>
+                          
+                          <form method="post" name="loginForm">
+                            <div class="well">
+                              <strong>
+                                <p>Student Info</p>
+                              </strong>                                                     
+                              <div ng-app ng-controller="StudentController">
+                                <input name='student-description' ng-model='studentDescription' ng-placeholder='Descrition Here'>                            
+                                <p>
+
+                                  <img src="../static/images/face-samir.png" alt="Linda" class="center-block img-circle img-responsive">
+                                  Your Name 
+                                  <span style='color:red;'>
+                                    {{studentDescription}}
+                                  </span>
+                                  ! 
+                                </p>
+                                
+                                
+                                <br>
+                                <button type="submit" class="btn btn-sm btn-success" ng-click="addRightCount()">
+                                  Add Right Answer
+                                </button>
+                                <br>
+                                
+                                <button type="submit" class="btn btn-sm btn-success" ng-click="addWrongCount()">
+                                  Add Wrong Answer
+                                </button>
+                                <br>
+
+                                <br>
+                                <div class="btn btn-default">
+                                  Right Answers: <span class="badge">{{rightNumber}}</span>
+                                  <br>
+                                  Wrong Answers <span class="badge"> {{wrongNumber}} </span>
+                                  <br>
+                                  Overall: <span class='badge'> {{rightNumber}} / {{rightNumber + wrongNumber}}</span>
+
+                                <div class="progress progress-striped">
+                                  <div class="progress-bar" style="width: 20%;">
+                                  </div>
+                                </div>      
+
+                                </div>
+                                <br>
+
+
+                                
+                                <hr>
+                                
+                                
+                              </div>
+                            </div>
+                            
+                            
+                            
+                            
+                            
+                            
+                            <button type="submit" class="btn btn-lg btn-block btn-success">
+                              Add Student
+                            </button>
+                          </form>
+                        </div>
+                      </div>
+                      
+                    </div>
+                    
+                  </div>
+                  
+                  
+                  
+                </div>
+              </div>
+            </div>
+          </section>
+          
+          
+          <section id="team">
+            <div class="outer_container">
+              <div class="container">
+                <div class="paddinglr10">
+                  <h1>
+                    Agenda
+                  </h1>
+                  <form ng-submit="addItem()">
+                    <fieldset>
+                      <!--   
+    <input type="text" placeholder="Add something.." size=50 ng-model="state.newItem" />
+    <button class="btn btn-primary">
+    Add Item
+    </button>
+    -->
+                      <br>
+                      
+                      <hr>
+                      
+                    </fieldset>
+                  </form>
+                  
+                  <button class="btn" ng-click="setAndRetrieveLastNItems(5)">
+                    Retrieve last 5 items
+                  </button>
+                  <button class="btn" ng-click="setAndRetrieveLastNItems(10)">
+                    Retrieve last 10 items
+                  </button>
+                  <button class="btn" ng-click="setAndRetrieveLastNItems(15)">
+                    Retrieve last 15 items
+                  </button>
+                  <button class="btn" ng-click="addGoal()">
+                    Add a goal
+                  </button>
+                  <button class="btn" ng-click="resetGoals()">
+                    Reset goals
+                  </button>
+                  
+                  <div class='well' ng-model='goals'>
+                    <strong>
+                      Tasks Here:
+                    </strong>
+                    <input type= "text" placeholder="Add a task here.." size=50 ng-model="newgoal">
+                    <button class="btn btn-primary" ng-click="addGoal(newgoal)">
+                      Add Tasks 
+                    </button>
+                    <br>
+                    
+                    <!-- {{goals}} -->
+                    <!--     
+    <ul ng-repeat="goal in goals">
+    <li ng-model="goal">
+    {{goal}} 
+    </li>
+    </ul>
+    -->
+                    
+                  </div>
+                  
+                  <table class="table">
+                    <thead>
+                      <th>
+                        Number
+                      </th>
+                      <th>
+                        Text
+                      </th>
+                    </thead>
+                    <tbody>
+                      <tr ng-repeat="goal in goals" ng-model='goals'>
+                        
+                        <td>
+                          
+                          <input id="demo_box_2" class="css-checkbox" type="checkbox" ng-model="targetGoal" ng-click="finishGoal(goal)" >
+                          <label for="demo_box_2" name="demo_lbl_2" class="css-label">
+                            {{goal.title}}
+                          </label>
+                        </td>
+                        <td>
+                          <input id="demo_box_1" class="css-checkbox" type="checkbox" ng-model="targetGoal" ng-click="inProgress(goal)" >
+                          <label for="demo_box_1" name="demo_lbl_1" class="css-label">
+                            {{goal.done}}
+                          </label>
+                          
+                          
+                          
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                
+                
+              </div>
+            </div>
+          </section>
+          
+          
+          
+          <section id="about">
+            <div class="outer_container" style:"min-height:400px;">
+              <div class="container">
+                <div class="row">
+                  <div class="col col-md-5 col-sm-12">
+                    <h1>
+                      Class Test
+                    </h1>
+                  </div>
+                  <div class="col col-md-7 col-sm-12 center-row" id="about_content">
+                    <div class="row center">
+                      <div class="col col-md-4 col-sm-12 templatemo_ceo">
+                        <img src="../static/images/face-samir.png" alt="Linda" class="center-block img-circle img-responsive">
+                        <p>
+                          Samir, CTO
+                        </p>
+                      </div>
+                      <div class="col col-md-8 col-sm-12">
+                        <p>
+                          asdasdas 
+                          <a href="#">
+                            asdasdas
+                          </a>
+                          based on Boasdasdasdasdaste.
+                        </p>
+                        <p>
+                          Vestibulum ac enim.Vestibulum at mollis justo, eu elementum nisi. Sed consequat odio eget nunc tristique venenatis. Nullam non eros molestie, tristique libero ut, lacinia diam.
+                        </p>
+                        <p>
+                          Integer hendrerit nibh at aliquam tincidunt. Duis auctor congue arcu eget congue. Vestibulum tristique sollicitudin est, non porttitor est viverra quis.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+
+    <!-- TESTING SECTION -->
+    <section id="testing">
+      <div class="container well" ng-app="TodoApp" ng-controller="StudentController">
+          Test 
+          <div class="btn btn-default" ng-click="test()">
+          Test
+          </div>
+      </div>
+
+    </section>
+
+    <!-- TESTING SECTION -->
+          
+      
+      <!-- JAVA SCRIPT -->
+      <script
+      src="../static/js/graphs.js">
+      </script>
+      <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js">
+      </script>
+      <script src="http://code.jquery.com/jquery-1.8.2.min.js">
+      </script>
+      <script src="http://cdn.oesmith.co.uk/morris-0.4.1.min.js">
+      </script>
+      
+      <!-- CONTROLLERS -->
+
+      
+
+  <!-- ADDITIONAL JAVASCRIPT  -->
+    <!-- Page Specific Plugins -->
+
+  <link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.5.1.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+  <script src="http://cdn.oesmith.co.uk/morris-0.5.1.min.js"></script>
+
+  </body>
+</html>

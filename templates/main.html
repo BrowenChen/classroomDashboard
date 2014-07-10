@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div ng-app="TodoApp">
+  <div ng-view> </div>
+</div>
+
+
+
+  <div ng-controller="StudentController">
+    <snap-drawer>
+      <p>Hello from drawer!</p>
+      <button snap-close>Close</button>
+    </snap-drawer>
+    <snap-content>
+      <p>Hello {{name}}!</p>
+      <p>Drag to open or use the toggle button</p>
+      <button snap-toggle="">Toggle</button>
+    </snap-content>
+  </div>
+
+
+<script src="/static/todo.js">
+</script>
+<!-- Angular Snap -->
+<script src="angular-snap.js" type="text/javascript" charset="utf-8"></script>
+<link rel="stylesheet" href="angular-snap.css" type="text/css" />
+<script src="snap.js" type="text/javascript" charset="utf-8"></script>
+<link rel="stylesheet" href="snap.css" type="text/css" />
+
+
+{% endblock content %}

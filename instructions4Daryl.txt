@@ -1,0 +1,58 @@
+Dashboard v1.0
+
+Updates Needed:
+- Add in responsive design
+- Hook up img avatars.
+- hook up graphs for data analysis
+- Auto generate student profiels
+- Make student profiels smaller
+
+- Color scheme and layout
+- animated sliding
+
+
+
+Instructions:
+
+(todo.html)
+
+View. Main classroom module ends at line 1103 look for
+
+“<!-- // *************************************************
+//END OF CLASSROOM MODULE FOR DARYL   -->  “
+
+
+
+
+(todo.js)
+
+StudentController for Angular Logic. Specific logic is located at the bottom of the page at line 196. 
+
+Look for:
+
+// ***********************************************
+//CLASSROOM MODULE FOR DARYL
+
+
+Details for hooking up from API:
+
+This is the function that will need to be changed according to what is fed from the API.
+
+/***
+@function Initializes student variables from API call
+
+
+@params Student object from API gives student ID, student Name
+Student level, Student task details, Student overall Progress
+Image for avatar
+
+
+
+***/
+    // $scope.setStudentDetails = function(student){
+    //     this.addName(student.name);
+    //     this.addID(student.id);
+    //     this.addLevel(student.level);
+    //     this.addProgress(student.progress);
+    //     this.addImg(student.img);
+    // }
