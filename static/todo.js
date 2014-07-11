@@ -224,12 +224,30 @@ function StudentController($scope){
 // DUMMY DATA AND TESTING
 
 
-    $scope.studentID = "";
+
+// Variables to set into a student
+    $scope.studentId = "";
     $scope.studentName = "";
+    $scope.studentProgress = "";
+    $scope.studentActivity = "";
+    $scope.studentImg = "";
+// Variables to set into a student
+
+
+
     $scope.level = 0;
     $scope.tasks = {};
-    $scope.progress = 0;
     $scope.imgUrl = "";
+    $scope.students = [{"name":"Samir","id":"7","progress":"23%", "activity": "Alg"}];
+
+    // $scope.students = [{"name":"Samir","id":"7","progress":"23%","activity":"Alg"},{"name":"samir","id":"2","progress":"23%","activity":"math"},{"name":"owen","id":"1","progress":"23%","activity":"algorithms"},{"name":"Joe","id":"3","progress":"50%","activity":"geometry"},{"name":"Morgan","id":"4","progress":"11%","activity":"Science"},{"name":"Jade","id":"5","progress":"90%","activity":"Life"},{"name":"Chris","id":"6","progress":"75%","activity":"Coding"}];
+
+
+
+    $scope.test = " S";
+
+
+
 
 
 /***
@@ -252,8 +270,32 @@ Image for avatar
     // }
 
 
-    $scope.addName = function(name){
+//@setStudent method
+//Sets the name, id, progress in percent, current activity
+
+    $scope.setStudent = function(n, i, p, a){
+	var newStud = {name: n,
+					id: i,
+					progress: p,
+                    activity: a
+					};
+
+		this.students.push(newStud);
+
+		//Reset 
+	    this.studentId = "";
+	    this.studentName = "";
+	    this.studentProgress = "";
+        this.studentActivity = "";
+        this.studentImg = "";
+
+
+    }
+
+
+    $scope.addName = function(name, student){
         this.studentName = name;
+        this.test = name;
     };
 
     $scope.addTask = function(task){
@@ -272,7 +314,9 @@ Image for avatar
     $scope.addImg = function(img){
         this.imgUrl = img;
     };
-
+    $scope.resetStudentList = function(){
+    	this.students = [];
+    }
 
     //SCROLLING
     // var container = angular.element(document.getElementById('container'));

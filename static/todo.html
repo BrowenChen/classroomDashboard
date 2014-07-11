@@ -1,3 +1,4 @@
+
 <!-- OWEN SECTION -->
 <div id="page-wrapper">
   <div class="row">
@@ -26,7 +27,7 @@
 
 <!-- OWEN SECTION -->
 
-<div class="row" ng-controller="StudentController">
+<div class="row">
 
 <section class="col-lg-3 connectedSortable"> 
                             <!-- Box (with bar chart) -->
@@ -160,41 +161,6 @@
 <!-- Live update feed -->
 
 
-
-<!-- Angular Testing Controller -->
-
-<!-- Angular TEsting Controller -->
-                            <div class="box box-primary">
-                                <div class="box-header">
-                                    <!-- tools box -->
-                                    <div class="pull-right box-tools">                                        
-                                        <button class="btn btn-primary btn-sm daterange pull-right" data-toggle="tooltip" title="Date range"><i class="fa fa-calendar"></i></button>
-                                        <button class="btn btn-primary btn-sm pull-right" data-widget='collapse' data-toggle="tooltip" title="Collapse" style="margin-right: 5px;"><i class="fa fa-minus"></i></button>
-                                    </div><!-- /. tools -->
-
-                                    <i class="fa fa-map-marker"></i>
-                                    <h3 class="box-title">
-                                        Angular Controller 
-                                    </h3>
-                                </div>
-                                <div class="box-body">
-
-                                    <div class='btn btn-warning'>Do something </div>
-                                </div>
-
-
-                                <div class="box-footer">
-                                Owen Chen
-                                </div>
-                                </div>
-
-
-<!-- Angular Testing Controller -->
-
-
-
-
-
 </section><!-- /.Left col -->
 
 
@@ -204,9 +170,15 @@
                             <div class="box box-primary">
                                 <div class="box-header">
                                     <!-- tools box -->
-                                    <div class="pull-right box-tools">                                        
-                                        <button class="btn btn-primary btn-sm daterange pull-right" data-toggle="tooltip" title="Date range"><i class="fa fa-calendar"></i></button>
-                                        <button class="btn btn-primary btn-sm pull-right" data-widget='collapse' data-toggle="tooltip" title="Collapse" style="margin-right: 5px;"><i class="fa fa-minus"></i></button>
+                                    <div class="pull-right box-tools">                          
+
+
+
+                                        <button class="btn btn-primary btn-sm daterange pull-right" data-toggle="tooltip" title="Date range"><i class="fa fa-calendar"></i> Test</button>
+
+
+
+                                        <button class="btn btn-primary btn-sm pull-right" data-widget='collapse' data-toggle="tooltip" title="Collapse" style="margin-right: 5px;">Another Test<i class="fa fa-minus"></i></button>
                                     </div><!-- /. tools -->
 
                                     <i class="fa fa-map-marker"></i>
@@ -223,27 +195,23 @@
 <div class="row"> 
 
 
-<!-- STUDENT INFO BOX FINAL -->           
-    <div class="col-lg-2 col-sm-3 col-xs-4">
-
-
+<!-- STUDENT INFO BOX FINAL LAST-->           
+    <div class="col-lg-2 col-sm-3 col-xs-4" ng-repeat="std in students" ng-show="std.id == 1">
         <div class="row img-responsive inner" style="background-color:#62BDE0; width:95%; margin:auto; height:inherit; border:1px solid #367fa9;">
         
-        
         <div class="col-lg-5 col-sm-5 col-xs-5">
-            <img src="../static/images/face-charles.png" class="img-circle img-responsive" style="width:100%;">
+            <img src="../static/images/face-samir.png" class="img-circle img-responsive" style="width:100%;">
+        </div>
+        <div class="col-lg-7 col-sm-7 col-xs-7" >
+            <div>
+	           <strong>{{std.name}} </strong> <br> <em><span class="badge" style="background-color:green;">{{std.progress}}</span></em>
+            </div>
         </div>
 
-        <div class="col-lg-7 col-sm-7 col-xs-7">
-            <strong>Owen</strong><br> Level: 0
         </div>
-
-
-        </div>
-
 
         <div class="row small-box small-box-footer img-responsive" style="background-color: #92D4ED; width:95%; margin:auto; height:inherit; border:1px solid #367fa9;">
-        <a style="color:black;"><span>Activity Description Here</span> </a>
+        <a style="color:black;"><span><em> Currently On: </em> {{std.activity}}</span> </a>
         <hr>
         <div class="glyphicon glyphicon-remove-circle" style="color: red;"> </div>
         <div class="glyphicon glyphicon-remove-circle" style="color: red;"> </div>
@@ -264,7 +232,105 @@
    border:1px solid #021a40;
    background-color:#ff0; -->
 
-    <div class="col-lg-2 col-sm-3 col-xs-4">
+    <div class="col-lg-2 col-sm-3 col-xs-4" ng-repeat="std in students" ng-show="std.id == 2">
+
+
+        <div class="row img-responsive inner" style="background-color:#62BDE0; width:95%; margin:auto; height:inherit; border:1px solid #367fa9;">
+        
+        <div class="col-lg-5 col-sm-5 col-xs-5">
+            <img src="../static/images/face-samir.png" class="img-circle img-responsive" style="width:100%;">
+        </div>
+        <div class="col-lg-7 col-sm-7 col-xs-7" >
+            <div>
+               <strong>{{std.name}} </strong> <br> <em><span class="badge" style="background-color:green;">{{std.progress}}</span></em>
+            </div>
+        </div>
+
+        </div>
+
+        <div class="row small-box small-box-footer img-responsive" style="background-color: #92D4ED; width:95%; margin:auto; height:inherit; border:1px solid #367fa9;">
+        <a style="color:black;"><span><em> Currently On: </em> {{std.activity}}</span> </a>
+        <hr>
+        <div class="glyphicon glyphicon-remove-circle" style="color: red;"> </div>
+        <div class="glyphicon glyphicon-remove-circle" style="color: red;"> </div>
+        <div class="glyphicon glyphicon-ok-circle" style="color: green;"> </div>
+        <div class="glyphicon glyphicon-remove-circle" style="color: yellow;"> </div>
+        <div class="glyphicon glyphicon-ok-circle" style="color: green;"> </div>
+        <div class="glyphicon glyphicon-remove-circle" style="color: yellow;"> </div>
+        <div class="glyphicon glyphicon-ok-circle" style="color: green;"> </div>
+        
+        </div>
+
+    </div>
+
+
+    <div class="col-lg-2 col-sm-3 col-xs-4" ng-repeat="std in students" ng-show="std.id == 3">
+
+
+        <div class="row img-responsive inner" style="background-color:#62BDE0; width:95%; margin:auto; height:inherit; border:1px solid #367fa9;">
+        
+        
+        <div class="col-lg-5 col-sm-5 col-xs-5">
+            <img src="../static/images/face-charles.png" class="img-circle img-responsive" style="width:100%;">
+        </div>
+
+        <div class="col-lg-7 col-sm-7 col-xs-7">
+            <strong>Owen</strong><br> Level: 0
+        </div>
+
+
+        </div>
+
+
+        <div class="row small-box small-box-footer img-responsive" style="background-color: #92D4ED; width:95%; margin:auto; height:inherit; border:1px solid #367fa9;">
+        <a style="color:black;"><span>Activity Description Here</span> </a>
+        <hr>
+        <div class="glyphicon glyphicon-remove-circle" style="color: red;"> </div>
+        <div class="glyphicon glyphicon-remove-circle" style="color: red;"> </div>
+        <div class="glyphicon glyphicon-ok-circle" style="color: green;"> </div>
+        <div class="glyphicon glyphicon-remove-circle" style="color: yellow;"> </div>
+        <div class="glyphicon glyphicon-ok-circle" style="color: green;"> </div>
+        <div class="glyphicon glyphicon-remove-circle" style="color: yellow;"> </div>
+        <div class="glyphicon glyphicon-ok-circle" style="color: green;"> </div>
+        
+        </div>
+
+    </div>
+
+    <div class="col-lg-2 col-sm-3 col-xs-4" ng-repeat="std in students" ng-show="std.id == 4">
+
+
+        <div class="row img-responsive inner" style="background-color:#62BDE0; width:95%; margin:auto; height:inherit; border:1px solid #367fa9;">
+        
+        
+        <div class="col-lg-5 col-sm-5 col-xs-5">
+            <img src="../static/images/face-charles.png" class="img-circle img-responsive" style="width:100%;">
+        </div>
+
+        <div class="col-lg-7 col-sm-7 col-xs-7">
+            <strong>Owen</strong><br> Level: 0
+        </div>
+
+
+        </div>
+
+
+        <div class="row small-box small-box-footer img-responsive" style="background-color: #92D4ED; width:95%; margin:auto; height:inherit; border:1px solid #367fa9;">
+        <a style="color:black;"><span>Activity Description Here</span> </a>
+        <hr>
+        <div class="glyphicon glyphicon-remove-circle" style="color: red;"> </div>
+        <div class="glyphicon glyphicon-remove-circle" style="color: red;"> </div>
+        <div class="glyphicon glyphicon-ok-circle" style="color: green;"> </div>
+        <div class="glyphicon glyphicon-remove-circle" style="color: yellow;"> </div>
+        <div class="glyphicon glyphicon-ok-circle" style="color: green;"> </div>
+        <div class="glyphicon glyphicon-remove-circle" style="color: yellow;"> </div>
+        <div class="glyphicon glyphicon-ok-circle" style="color: green;"> </div>
+        
+        </div>
+
+    </div>
+
+    <div class="col-lg-2 col-sm-3 col-xs-4" ng-repeat="std in students" ng-show="std.id == 5">
 
 
         <div class="row img-responsive inner" style="background-color:#62BDE0; width:95%; margin:auto; height:inherit; border:1px solid #367fa9;">
@@ -298,107 +364,7 @@
     </div>
 
 
-    <div class="col-lg-2 col-sm-3 col-xs-4">
-
-
-        <div class="row img-responsive inner" style="background-color:#62BDE0; width:95%; margin:auto; height:inherit; border:1px solid #367fa9;">
-        
-        
-        <div class="col-lg-5 col-sm-5 col-xs-5">
-            <img src="../static/images/face-charles.png" class="img-circle img-responsive" style="width:100%;">
-        </div>
-
-        <div class="col-lg-7 col-sm-7 col-xs-7">
-            <strong>Owen</strong><br> Level: 0
-        </div>
-
-
-        </div>
-
-
-        <div class="row small-box small-box-footer img-responsive" style="background-color: #92D4ED; width:95%; margin:auto; height:inherit; border:1px solid #367fa9;">
-        <a style="color:black;"><span>Activity Description Here</span> </a>
-        <hr>
-        <div class="glyphicon glyphicon-remove-circle" style="color: red;"> </div>
-        <div class="glyphicon glyphicon-remove-circle" style="color: red;"> </div>
-        <div class="glyphicon glyphicon-ok-circle" style="color: green;"> </div>
-        <div class="glyphicon glyphicon-remove-circle" style="color: yellow;"> </div>
-        <div class="glyphicon glyphicon-ok-circle" style="color: green;"> </div>
-        <div class="glyphicon glyphicon-remove-circle" style="color: yellow;"> </div>
-        <div class="glyphicon glyphicon-ok-circle" style="color: green;"> </div>
-        
-        </div>
-
-    </div>
-
-    <div class="col-lg-2 col-sm-3 col-xs-4">
-
-
-        <div class="row img-responsive inner" style="background-color:#62BDE0; width:95%; margin:auto; height:inherit; border:1px solid #367fa9;">
-        
-        
-        <div class="col-lg-5 col-sm-5 col-xs-5">
-            <img src="../static/images/face-charles.png" class="img-circle img-responsive" style="width:100%;">
-        </div>
-
-        <div class="col-lg-7 col-sm-7 col-xs-7">
-            <strong>Owen</strong><br> Level: 0
-        </div>
-
-
-        </div>
-
-
-        <div class="row small-box small-box-footer img-responsive" style="background-color: #92D4ED; width:95%; margin:auto; height:inherit; border:1px solid #367fa9;">
-        <a style="color:black;"><span>Activity Description Here</span> </a>
-        <hr>
-        <div class="glyphicon glyphicon-remove-circle" style="color: red;"> </div>
-        <div class="glyphicon glyphicon-remove-circle" style="color: red;"> </div>
-        <div class="glyphicon glyphicon-ok-circle" style="color: green;"> </div>
-        <div class="glyphicon glyphicon-remove-circle" style="color: yellow;"> </div>
-        <div class="glyphicon glyphicon-ok-circle" style="color: green;"> </div>
-        <div class="glyphicon glyphicon-remove-circle" style="color: yellow;"> </div>
-        <div class="glyphicon glyphicon-ok-circle" style="color: green;"> </div>
-        
-        </div>
-
-    </div>
-
-    <div class="col-lg-2 col-sm-3 col-xs-4">
-
-
-        <div class="row img-responsive inner" style="background-color:#62BDE0; width:95%; margin:auto; height:inherit; border:1px solid #367fa9;">
-        
-        
-        <div class="col-lg-5 col-sm-5 col-xs-5">
-            <img src="../static/images/face-charles.png" class="img-circle img-responsive" style="width:100%;">
-        </div>
-
-        <div class="col-lg-7 col-sm-7 col-xs-7">
-            <strong>Owen</strong><br> Level: 0
-        </div>
-
-
-        </div>
-
-
-        <div class="row small-box small-box-footer img-responsive" style="background-color: #92D4ED; width:95%; margin:auto; height:inherit; border:1px solid #367fa9;">
-        <a style="color:black;"><span>Activity Description Here</span> </a>
-        <hr>
-        <div class="glyphicon glyphicon-remove-circle" style="color: red;"> </div>
-        <div class="glyphicon glyphicon-remove-circle" style="color: red;"> </div>
-        <div class="glyphicon glyphicon-ok-circle" style="color: green;"> </div>
-        <div class="glyphicon glyphicon-remove-circle" style="color: yellow;"> </div>
-        <div class="glyphicon glyphicon-ok-circle" style="color: green;"> </div>
-        <div class="glyphicon glyphicon-remove-circle" style="color: yellow;"> </div>
-        <div class="glyphicon glyphicon-ok-circle" style="color: green;"> </div>
-        
-        </div>
-
-    </div>
-
-
-    <div class="col-lg-2 col-sm-3 col-xs-4">
+    <div class="col-lg-2 col-sm-3 col-xs-4" ng-repeat="std in students" ng-show="std.id == 6">
 
 
         <div class="row img-responsive inner" style="background-color:#62BDE0; width:95%; margin:auto; height:inherit; border:1px solid #367fa9;">
@@ -649,220 +615,6 @@
     </div>
 
 
-
-
-<!-- STUDENT INFO BOX FINAL -->           
-    <div class="col-lg-2 col-sm-3 col-xs-4">
-
-
-        <div class="row img-responsive inner" style="background-color:#62BDE0; width:95%; margin:auto; height:inherit; border:1px solid #367fa9;">
-        
-        
-        <div class="col-lg-5 col-sm-5 col-xs-5">
-            <img src="../static/images/face-charles.png" class="img-circle img-responsive" style="width:100%;">
-        </div>
-
-        <div class="col-lg-7 col-sm-7 col-xs-7">
-            <strong>Owen</strong><br> Level: 0
-        </div>
-
-
-        </div>
-
-
-        <div class="row small-box small-box-footer img-responsive" style="background-color: #92D4ED; width:95%; margin:auto; height:inherit; border:1px solid #367fa9;">
-        <a style="color:black;"><span>Activity Description Here</span> </a>
-        <hr>
-        <div class="glyphicon glyphicon-remove-circle" style="color: red;"> </div>
-        <div class="glyphicon glyphicon-remove-circle" style="color: red;"> </div>
-        <div class="glyphicon glyphicon-ok-circle" style="color: green;"> </div>
-        <div class="glyphicon glyphicon-remove-circle" style="color: yellow;"> </div>
-        <div class="glyphicon glyphicon-ok-circle" style="color: green;"> </div>
-        <div class="glyphicon glyphicon-remove-circle" style="color: yellow;"> </div>
-        <div class="glyphicon glyphicon-ok-circle" style="color: green;"> </div>
-        
-        </div>
-
-    </div>
-
-<!-- STUDENT INFO BOX FINAL -->           
-
-
-<!--     padding:1px;
-   border:1px solid #021a40;
-   background-color:#ff0; -->
-
-    <div class="col-lg-2 col-sm-3 col-xs-4">
-
-
-        <div class="row img-responsive inner" style="background-color:#62BDE0; width:95%; margin:auto; height:inherit; border:1px solid #367fa9;">
-        
-        
-        <div class="col-lg-5 col-sm-5 col-xs-5">
-            <img src="../static/images/face-charles.png" class="img-circle img-responsive" style="width:100%;">
-        </div>
-
-        <div class="col-lg-7 col-sm-7 col-xs-7">
-            <strong>Owen</strong><br> Level: 0
-        </div>
-
-
-        </div>
-
-
-        <div class="row small-box small-box-footer img-responsive" style="background-color: #92D4ED; width:95%; margin:auto; height:inherit; border:1px solid #367fa9;">
-        <a style="color:black;"><span>Activity Description Here</span> </a>
-        <hr>
-        <div class="glyphicon glyphicon-remove-circle" style="color: red;"> </div>
-        <div class="glyphicon glyphicon-remove-circle" style="color: red;"> </div>
-        <div class="glyphicon glyphicon-ok-circle" style="color: green;"> </div>
-        <div class="glyphicon glyphicon-remove-circle" style="color: yellow;"> </div>
-        <div class="glyphicon glyphicon-ok-circle" style="color: green;"> </div>
-        <div class="glyphicon glyphicon-remove-circle" style="color: yellow;"> </div>
-        <div class="glyphicon glyphicon-ok-circle" style="color: green;"> </div>
-        
-        </div>
-
-    </div>
-
-
-    <div class="col-lg-2 col-sm-3 col-xs-4">
-
-
-        <div class="row img-responsive inner" style="background-color:#62BDE0; width:95%; margin:auto; height:inherit; border:1px solid #367fa9;">
-        
-        
-        <div class="col-lg-5 col-sm-5 col-xs-5">
-            <img src="../static/images/face-charles.png" class="img-circle img-responsive" style="width:100%;">
-        </div>
-
-        <div class="col-lg-7 col-sm-7 col-xs-7">
-            <strong>Owen</strong><br> Level: 0
-        </div>
-
-
-        </div>
-
-
-        <div class="row small-box small-box-footer img-responsive" style="background-color: #92D4ED; width:95%; margin:auto; height:inherit; border:1px solid #367fa9;">
-        <a style="color:black;"><span>Activity Description Here</span> </a>
-        <hr>
-        <div class="glyphicon glyphicon-remove-circle" style="color: red;"> </div>
-        <div class="glyphicon glyphicon-remove-circle" style="color: red;"> </div>
-        <div class="glyphicon glyphicon-ok-circle" style="color: green;"> </div>
-        <div class="glyphicon glyphicon-remove-circle" style="color: yellow;"> </div>
-        <div class="glyphicon glyphicon-ok-circle" style="color: green;"> </div>
-        <div class="glyphicon glyphicon-remove-circle" style="color: yellow;"> </div>
-        <div class="glyphicon glyphicon-ok-circle" style="color: green;"> </div>
-        
-        </div>
-
-    </div>
-
-    <div class="col-lg-2 col-sm-3 col-xs-4">
-
-
-        <div class="row img-responsive inner" style="background-color:#62BDE0; width:95%; margin:auto; height:inherit; border:1px solid #367fa9;">
-        
-        
-        <div class="col-lg-5 col-sm-5 col-xs-5">
-            <img src="../static/images/face-charles.png" class="img-circle img-responsive" style="width:100%;">
-        </div>
-
-        <div class="col-lg-7 col-sm-7 col-xs-7">
-            <strong>Owen</strong><br> Level: 0
-        </div>
-
-
-        </div>
-
-
-        <div class="row small-box small-box-footer img-responsive" style="background-color: #92D4ED; width:95%; margin:auto; height:inherit; border:1px solid #367fa9;">
-        <a style="color:black;"><span>Activity Description Here</span> </a>
-        <hr>
-        <div class="glyphicon glyphicon-remove-circle" style="color: red;"> </div>
-        <div class="glyphicon glyphicon-remove-circle" style="color: red;"> </div>
-        <div class="glyphicon glyphicon-ok-circle" style="color: green;"> </div>
-        <div class="glyphicon glyphicon-remove-circle" style="color: yellow;"> </div>
-        <div class="glyphicon glyphicon-ok-circle" style="color: green;"> </div>
-        <div class="glyphicon glyphicon-remove-circle" style="color: yellow;"> </div>
-        <div class="glyphicon glyphicon-ok-circle" style="color: green;"> </div>
-        
-        </div>
-
-    </div>
-
-    <div class="col-lg-2 col-sm-3 col-xs-4">
-
-
-        <div class="row img-responsive inner" style="background-color:#62BDE0; width:95%; margin:auto; height:inherit; border:1px solid #367fa9;">
-        
-        
-        <div class="col-lg-5 col-sm-5 col-xs-5">
-            <img src="../static/images/face-charles.png" class="img-circle img-responsive" style="width:100%;">
-        </div>
-
-        <div class="col-lg-7 col-sm-7 col-xs-7">
-            <strong>Owen</strong><br> Level: 0
-        </div>
-
-
-        </div>
-
-
-        <div class="row small-box small-box-footer img-responsive" style="background-color: #92D4ED; width:95%; margin:auto; height:inherit; border:1px solid #367fa9;">
-        <a style="color:black;"><span>Activity Description Here</span> </a>
-        <hr>
-        <div class="glyphicon glyphicon-remove-circle" style="color: red;"> </div>
-        <div class="glyphicon glyphicon-remove-circle" style="color: red;"> </div>
-        <div class="glyphicon glyphicon-ok-circle" style="color: green;"> </div>
-        <div class="glyphicon glyphicon-remove-circle" style="color: yellow;"> </div>
-        <div class="glyphicon glyphicon-ok-circle" style="color: green;"> </div>
-        <div class="glyphicon glyphicon-remove-circle" style="color: yellow;"> </div>
-        <div class="glyphicon glyphicon-ok-circle" style="color: green;"> </div>
-        
-        </div>
-
-    </div>
-
-
-    <div class="col-lg-2 col-sm-3 col-xs-4">
-
-
-        <div class="row img-responsive inner" style="background-color:#62BDE0; width:95%; margin:auto; height:inherit; border:1px solid #367fa9;">
-        
-        
-        <div class="col-lg-5 col-sm-5 col-xs-5">
-            <img src="../static/images/face-charles.png" class="img-circle img-responsive" style="width:100%;">
-        </div>
-
-        <div class="col-lg-7 col-sm-7 col-xs-7">
-            <strong>Owen</strong><br> Level: 0
-        </div>
-
-
-        </div>
-
-
-        <div class="row small-box small-box-footer img-responsive" style="background-color: #92D4ED; width:95%; margin:auto; height:inherit; border:1px solid #367fa9;">
-        <a style="color:black;"><span>Activity Description Here</span> </a>
-        <hr>
-        <div class="glyphicon glyphicon-remove-circle" style="color: red;"> </div>
-        <div class="glyphicon glyphicon-remove-circle" style="color: red;"> </div>
-        <div class="glyphicon glyphicon-ok-circle" style="color: green;"> </div>
-        <div class="glyphicon glyphicon-remove-circle" style="color: yellow;"> </div>
-        <div class="glyphicon glyphicon-ok-circle" style="color: green;"> </div>
-        <div class="glyphicon glyphicon-remove-circle" style="color: yellow;"> </div>
-        <div class="glyphicon glyphicon-ok-circle" style="color: green;"> </div>
-        
-        </div>
-
-    </div>
-
-
-
-
-<!-- new row -->
 
 
 
@@ -1089,6 +841,68 @@
                                 </div>
                             </div>
                             <!-- /.box -->
+
+
+
+<!-- Angular Testing Controller -->
+
+<!-- Angular TEsting Controller -->
+                            <div class="box box-primary">
+                                <div class="box-header">
+                                    <!-- tools box -->
+                                    <div class="pull-right box-tools">                                        
+                                        <button class="btn btn-primary btn-sm daterange pull-right" data-toggle="tooltip" title="Date range"><i class="fa fa-calendar"></i></button>
+                                        <button class="btn btn-primary btn-sm pull-right" data-widget='collapse' data-toggle="tooltip" title="Collapse" style="margin-right: 5px;"><i class="fa fa-minus"></i></button>
+                                    </div><!-- /. tools -->
+
+                                    <i class="fa fa-map-marker"></i>
+                                    <h3 class="box-title">
+                                        Controller 
+                                    </h3>
+                                </div>
+                                <div class="box-body">
+
+                                    <div class="input-group">
+
+                                    <span class="btn input-group-addon" ng-click='setStudent(studentName, studentId, studentProgress, studentActivity)'>Add student</span>
+                                    
+                                    <input type="text" class="form-control" ng-Model="studentName" placeholder="Username">
+                                    <input type="text" class="form-control" ng-Model="studentId" placeholder="Identifier">
+                                    <input type="text" class="form-control" ng-Model="studentProgress" placeholder="Progress">
+                                    <input type="text" class="form-control" ng-Model="studentActivity" placeholder="Activity">                                    
+
+                                                                                                            
+                                    </div>
+
+                                    <div class='btn btn-warning' ng-click='resetStudentList()'>Reset student List </div>
+
+                                    <div class="well">
+                                    {{studentName}} {{studentId}} {{studentProgress}}
+                                    {{students}} 
+
+                                    </div>
+
+                                    <br>
+
+
+
+                                                                        
+                                </div>
+
+
+                                <div class="box-footer">
+
+                                
+                                
+                                </div>
+                                </div>
+
+
+<!-- Angular Testing Controller -->
+
+
+
+
 
                           <!-- TO DO List -->
                             <div class="box box-primary">
@@ -1319,7 +1133,7 @@
 
 <!-- OWEN SECTION -->
 
-<div class="row" ng-controller="StudentController">
+<div class="row">
 
 <section class="col-lg-3 connectedSortable"> 
                             <!-- Box (with bar chart) -->
@@ -2539,7 +2353,7 @@
 
 
 <!-- ==================TESTING SECTION======================= -->
-<section id="mainSection" ng-controller="StudentController" style="max-height: 500px;">
+<section id="mainSection"   style="max-height: 500px;">
 <div class="container">
 
   <div class="row">
@@ -2756,7 +2570,7 @@
 
 <section id="mainContainer">
   <div class="outer_container">
-    <div class="container" ng-controller="StudentController">
+    <div class="container"  >
       
       <div class="row">
         <div class="col-md-4">
@@ -3892,7 +3706,7 @@
 <!-- CONTAINER FOR STUDENT INFO BOXES -->
 <section id="testContainer">
   <div class="outer_container well">
-    <div class="container" ng-app ng-controller="StudentController">
+    <div class="container"  >
       <div class='row'>
         <div class="row">
           <div class="col-md-3">
@@ -5094,7 +4908,7 @@
                           Student Info
                         </strong>
                         
-                        <div ng-app ng-controller="StudentController">
+                        <div     >
                           <input name='student-description' ng-model='studentDescription' ng-placeholder='Descrition Here'>
                           
                           <p>
@@ -5314,7 +5128,7 @@ Add Item
     
     <!-- TESTING SECTION -->
     <section id="testing">
-      <div class="container well" ng-app="TodoApp" ng-controller="StudentController">
+      <div class="container well" >
         Test 
 
         <div class="btn btn-default" ng-click="test()">
