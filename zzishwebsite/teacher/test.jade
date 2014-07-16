@@ -98,10 +98,10 @@ block content
 
 									.row(ng-hide="isViewActive")
 										.col-lg-12.col-sm-12.col-xs-12
-											.row(ng-repeat="std in students | orderBy:predicate:reverse | filter:gradeRange" style="margin:0px; padding:0px;")
+											.row(ng-repeat="std in students | orderBy:predicate:reverse | filter:gradeRange" style="margin:2px; border: 1px solid #367fa9; background-color: #ecf0f1")
 												.col-sm-1
 													center
-														img.img-responsive(src='/img/icons/face-samir.png', style='width: 25px;')
+														img.img-circle.img-responsive(src='/img/icons/face-samir.png', style='width: 25px;')
 												.col-sm-1
 													center
 														strong {{std.name}}
@@ -110,7 +110,7 @@ block content
 												.col-sm-1
 													center
 														em
-															span.badge(style='background-color: green;') {{std.percentage}} %
+															span.badge(ng-class="{amberBack: (std.percentage >= 25 && std.percentage <= 50), greenBack: (std.percentage >= 75 && std.percentage <= 100), redBack: (std.percentage >= 0 && std.percentage <= 25), yellowBack: (std.percentage >= 50 && std.percentage <= 75)}") {{std.percentage}} %
 												.col-sm-2
 													.glyphicon.glyphicon-remove-circle(style='color: red;')  
 													.glyphicon.glyphicon-remove-circle(style='color: red;')  
@@ -121,7 +121,7 @@ block content
 													.glyphicon.glyphicon-ok-circle(style='color: green;')
 												.col-sm-5
 													div.progress
-														div.progress-bar(style="width: {{std.percentage}}%")
+														div.progress-bar(ng-class="{amberBack: (std.percentage >= 25 && std.percentage <= 50), greenBack: (std.percentage >= 75 && std.percentage <= 100), redBack: (std.percentage >= 0 && std.percentage <= 25), yellowBack: (std.percentage >= 50 && std.percentage <= 75)}" style="width: {{std.percentage}}%")
 
 
 
