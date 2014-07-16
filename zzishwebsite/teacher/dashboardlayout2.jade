@@ -1,0 +1,137 @@
+html(ng-app="teacherDashboardApp")
+	head
+		title Classroom Module
+		meta(name='viewport', content='width=device-width, initial-scale=1.0')
+		meta(name='description', content='')
+		meta(name='author', content='templatemo')
+		meta(charset='UTF-8')
+		script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
+
+		link(href='http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css', rel='stylesheet')
+		script(src='http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js')
+		link(href='/static/css/sb-admin.css', rel='stylesheet')
+		link(href='http://fonts.googleapis.com/css?family=Comfortaa:400,700', rel='stylesheet', type='text/css')
+
+		link(href='/static/css/AdminLTE.css', rel='stylesheet', type='text/css')
+		link(rel='stylesheet', type='text/css', href='/static/css/custom.css')
+		
+
+		script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js')
+		script(src='/js/dashboardController.js')
+
+			
+	body.skin-white
+		nav.navbar-collapse.navbar.navbar-inverse.navbar-fixed-top.navbar-main-collapse(role='navigation', style='background-color: #001F3F;')
+			.navbar-header
+
+				a.navbar-brand.sidebar-toggle(href='#', data-toggle='offcanvas', role='button') Classroom Module
+
+			ul.nav.navbar-nav.navbar-right.navbar-user
+				li.dropdown.messages-dropdown
+					a.dropdown-toggle(href='#', data-toggle='dropdown')
+						i.fa.fa-envelope
+						| Messages
+						span.badge 7
+						b.caret
+					ul.dropdown-menu
+						li.dropdown-header 7 New Messages
+						li.message-preview
+							a(href='#')
+								span.avatar
+									img(src='http://placehold.it/50x50')
+								span.name Samir Seetal:
+								span.message Hey guys, I have a new baby...
+								span.time
+									i.fa.fa-clock-o
+									| 4:34 PM
+						li.divider
+						li.message-preview
+							a(href='#')
+								span.avatar
+									img(src='http://placehold.it/50x50')
+								span.name Daryl Rodrigo:
+								span.message Sweet
+								span.time
+									i.fa.fa-clock-o
+									| 4:34 PM
+						li.divider
+						li.message-preview
+							a(href='#')
+								span.avatar
+									img(src='http://placehold.it/50x50')
+								span.name Ed Wiles
+								span.message Hi
+								span.time
+									i.fa.fa-clock-o
+									| 4:34 PM
+						li.divider
+						li
+							a(href='#')
+								| View Inbox
+								span.badge 7
+				li.dropdown.alerts-dropdown
+					a.dropdown-toggle(href='#', data-toggle='dropdown')
+						i.fa.fa-bell
+						| Alerts
+						span.badge 3
+						b.caret
+					ul.dropdown-menu
+						li
+							a(href='#')
+								| Default
+								span.label.label-default Default
+						li
+							a(href='#')
+								| Primary
+								span.label.label-primary Primary
+						li
+							a(href='#')
+								| Success
+								span.label.label-success Success
+						li
+							a(href='#')
+								| Info
+								span.label.label-info Info
+						li
+							a(href='#')
+								| Warning
+								span.label.label-warning Warning
+						li
+							a(href='#')
+								| Danger
+								span.label.label-danger Danger
+						li.divider
+						li
+							a(href='#') View All
+				li.dropdown.user-dropdown
+					a.dropdown-toggle(href='#', data-toggle='dropdown')
+						i.fa.fa-user
+						| Owen Chen
+						b.caret
+					ul.dropdown-menu
+						li
+							a(href='#')
+								i.fa.fa-user
+								| Profile
+						li
+							a(href='#')
+								i.fa.fa-envelope
+								| Inbox
+								span.badge 7
+						li
+							a(href='#')
+								i.fa.fa-gear
+								| Settings
+						li.divider
+						li
+							a(href='#')
+								i.fa.fa-power-off
+								| Log Out
+
+		#page-wrapper
+			block content
+			
+			link(href='/static/css/morris.css', rel='stylesheet')
+			script(src='//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js')
+			script(src='//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js')
+			script(src='http://cdn.oesmith.co.uk/morris-0.5.1.min.js')

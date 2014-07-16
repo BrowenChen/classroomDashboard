@@ -1,0 +1,30 @@
+extends ../web/registerlayout
+
+block account
+	span Account - Teacher
+
+block content
+
+
+	div.row
+
+	p &nbsp;
+	p &nbsp;
+
+		div.small-6.large-centered.columns
+			form(align="center" name="input" action="/users/register/teacher" method="post")
+
+				h1(align="center" style="font-family: 'Lato', sans-serif;") Teacher Register
+
+				hr
+
+				input(name="email" type="text" placeholder="Email")
+
+				input(name="name" type="text" placeholder="Full Name")
+
+				input(name="phone" type="text" placeholder="Telephone (optional)")
+
+				input(name="password" type="password" placeholder="Password")
+
+				button(type="submit" value="signup") Submit
+

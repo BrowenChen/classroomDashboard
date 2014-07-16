@@ -1,0 +1,141 @@
+extends profile_layout
+
+block content
+
+	div.row.main_cleanformatting_invert
+		
+		hr
+
+		h1(align="center") Class : #{classroom.name}
+
+		hr
+
+		div.row
+			- if(classroom.code != null)
+				h3 code: #{classroom.code}
+
+			- if(classroom.joinByCode != null)
+
+				hr
+				div.small-6.large-centered.columns
+					div.large-6.columns
+						center
+							h3 New Add User
+							input(type="text" placeholder="name")#studentName
+							select#studentAvatar
+								option(value="jaguar") jaguar
+								option(value="monkey") monkey
+								option(value="macau") macau
+								option(value="toucan") toucan
+
+							input(type="password" placeholder="password")#studentPassword
+							p random password - 
+								input(type="checkbox" placeholder="randomPassword")#randomPass
+
+							a.button(onclick="addNewStudent()") Add
+
+					div.large-6.columns
+						center
+							h3 Add User by Code
+							input(type="text" placeholder="code")#studentCode
+
+							a.button(onclick="addStudentByCode()") Add
+
+
+			hr
+
+		div.row
+			div.row
+				div.large-3.columns
+					p Name
+				div.large-3.columns
+					p Code
+				div.large-6.columns
+					p
+				hr
+			- each student in classroom.members
+				div.row
+					div.large-3.columns
+						p #{student.name}
+					div.large-3.columns
+						p #{student.code}
+					div.large-6.columns
+						p
+
+	script.
+		var urlBase = '#{ajaxUrl}';
+
+		function addNewStudent(){
+			var name = $('#studentName').val();
+			var avatar = $('#studentAvatar').val();
+			var password = $('#studentPassword').val();
+			var randomPass = $('#randomPass').attr('checked') 
+
+			console.log(name);
+
+			var url = document.URL;
+			url = url.split('/');
+			url = url[5].split('?');
+			classroomId = url[0];
+
+			var data = {
+				name: name,
+				classroomId: classroomId,
+				avatar: avatar,
+				password: password,
+				randomPass: randomPass
+			};
+
+			console.log('data = ' + JSON.stringify(data));
+
+			$.ajax({
+				type: 'POST',
+				data: JSON.stringify(data),
+				contentType: 'application/json',
+				url: urlBase + '/teacher/classroom/addnewstudent',
+				success: function(data) {
+					console.log(data);
+					if(data.res == '200') { alert('user added'); }
+					else { alert('user already exists'); }
+
+					document.location.href = (urlBase + data.url);
+				}
+
+			
+			});
+		}
+
+
+		function addStudentByCode(){
+			var code = $('#studentCode').val();
+			console.log(code);
+
+			var url = document.URL;
+			url = url.split('/');
+			url = url[5].split('?');
+			classroomId = url[0];
+
+			var data = {
+				code: code,
+				classroomId: classroomId
+			};
+
+			console.log('data = ' + JSON.stringify(data));
+
+			$.ajax({
+				type: 'POST',
+				data: JSON.stringify(data),
+				contentType: 'application/json',
+				url: urlBase + '/teacher/classroom/addstudentbycode',
+				success: function(data) {
+					if(data.res == '200') { alert('user added'); }
+					else { alert('user already exists'); }
+
+					document.location.href = (urlBase + data.url);
+					
+				}
+
+			
+			});
+		}
+

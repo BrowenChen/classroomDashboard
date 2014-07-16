@@ -1,0 +1,48 @@
+extends profile_layout
+
+block content
+
+	div.row.main_cleanformatting_invert
+		
+		hr
+
+		h1(align="center") #{teacher.name}'s Dashboard
+
+		hr
+
+		
+		h4 Explainations
+		p Live - This will take you to the teacher dashboard which allows you to see in real time what is happening in your classroom.
+		p Edit - This allows a teacher to add and create students to a classroom. These will the be treated as a group through with games can be played.
+
+		hr
+
+		div.row
+			hr
+			div.medium-2.columns
+				p 
+			div.medium-8.columns
+				h2(align="center") Current Classrooms
+
+			div.medium-2.columns
+				a(href="/teachers/addclassroom").button.round Add Classroom
+			hr
+
+		p &nbsp;
+
+		
+			for classroom in classrooms
+				div.small-10.large-centered.columns
+					div.row(style="background-color: #DDDDDD; padding: 20px;")
+						div.medium-8.columns
+							h4 Name: #{classroom.name} 
+							h4 Year: #{classroom.year}
+						div.medium-4.columns
+							div.row
+								div.medium-6.columns
+									a.button(href="/teachers/classroom/#{classroom.id}/live" style="margin-top: 15px; margin-right: 15px;") Live
+								div.medium-6.columns								
+									a.button(href="/teachers/classroom/#{classroom.id}/" style="margin-top: 15px;") Edit
+				p &nbsp;
+				
+

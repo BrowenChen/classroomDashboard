@@ -1,0 +1,32 @@
+extends layout
+extends layout
+
+block content
+
+		div.row
+
+			center
+				img(src="/img/zzish-logo.png" style="height: 125px; margin-top:30px; margin-bottom: 30px;")
+
+
+
+			div.small-4.large-centered.columns(style="text-position: center; background-color:#000000; opacity:0.7; border-radius: 20px 20px 20px 20px; padding-bottom:10px; padding-top:10px;")
+				
+				h1(align="center" style="color: #FFFFFF; font-family: 'Lato', sans-serif;") Login
+
+				
+				hr
+
+				form(name="input" action="/teachers/login" method="post")
+					input(type="text" name="email" placeholder="teacher@zzish.com")
+					input(type="password" name="password")
+					
+					hr
+					center
+						p 
+							button.button.round(type="submit" value="Submit") Login
+							</br>
+							a(href="/teachers/register") Sign Up
+						p
+							
+		p &nbsp;

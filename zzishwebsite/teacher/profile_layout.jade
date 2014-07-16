@@ -1,0 +1,60 @@
+doctype html
+html
+	head
+		title= title
+		
+		meta(name="viewport" content="width=device-width")
+
+		block css
+			link(rel='stylesheet', href='/css/foundation.css')
+			link(rel='stylesheet', href='/css/style.css')
+			link(href='http://fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css')
+
+		block js
+			script(src="/js/vendor/modernizr.js")
+			script(src="/js/vendor/jquery.js")
+			script(src="/js/foundation.min.js")
+			script(src="/js/foundation/foundation.abide.js")
+
+		
+	body
+		nav(data-topbar).top-bar
+			ul.title-area
+				li.name
+				li.toggle-topbar.menu-icon
+					a(href="/")
+						span Zzish
+
+
+			section.top-bar-section
+				ul.left
+					li(style="color: #FFFFFF; margin: 7px;").has-dropdown Account - Teacher
+						ul.dropdown
+							li
+								a(href="/users/anonuser/switch")  Anonymous
+							li
+								a(href="/users/developer/switch") Developer
+							li
+								a(href="/users/student/switch") Student
+							li
+								a(href="/users/parent/switch") Parent
+
+				ul.right
+					li
+						a(href="/teachers/logout") Logout
+
+		
+		block content
+		
+
+			
+
+		//- Required to load Foundation:
+		script.
+			$(document).foundation();
+
+		script.
+			var addthis_config = {"data_track_addressbar":true};
+			var addthis_config = {services_exclude: 'print'};
+
+		script(src="//s7.addthis.com/js/300/addthis_widget.js#pubid=edwiles")

@@ -1,0 +1,74 @@
+extends layout
+
+block content
+
+	div.row
+		div.row(style="background-color: #e67e22; padding: 10px; margin-top: 5%; margin-bottom: 5%;")
+			h1(align="center" style="color: #FFFFFF;") Classroom 3A
+
+		div.row
+			div.large-6.columns
+				- for (var i = 0; i < 10; ++i) {
+					div.row(style="background-color: #34495e; margin-top: 10px; margin-right: 5px; padding: 10px;")
+						div.small-3.columns
+							img(style="margin: 5px;" src="http://placehold.it/75x75")
+						div.small-9.columns
+							div.row
+								div.small-6.columns
+									input(value="Biz Stone" type="text")
+								div.small-6.columns
+									input(value="123123" type="password")
+							div.row
+								div.small-12.small-centered.columns
+									div.progress.round
+										span(style="width:50%").meter
+						
+				- }
+
+
+			div.large-6.columns
+				div.row(style="background-color: #9b59b6; margin-top: 10px; margin-left: 5px; padding: 10px;")
+					
+					dl.tabs(data-tab)
+						dd.active
+							a(href="#stat1") Class Improvement
+						dd
+							a(href="#stat2") Class Progress
+						dd
+							a(href="#stat3") wut?
+
+			
+					div.tabs-content
+						div#stat1.content.active
+							h1(align="center") Class Improvement
+
+							- for (var i = 0; i < 10; ++i) {
+								div.row
+									div.small-4.columns
+										p Some dude
+									div.small-8.columns
+										div(style="margin-top:10px;").progress.round.small
+											span(style="width:70%").meter
+									
+							- }
+
+						div#stat2.content
+							h1(align="center") Class Progress
+
+							- for (var i = 0; i < 10; ++i) {
+								div.row
+									div.small-4.columns
+										p Some dude
+									div.small-8.columns
+										div(style="margin-top:10px;").progress.round
+											span(style="width:20%").meter
+									
+							- }
+
+
+				div.row(style="background-color: #9b59b6; margin-top: 10px; padding: 10px;")
+					h1 Individual Student Stats
+
+	script.
+
+					
