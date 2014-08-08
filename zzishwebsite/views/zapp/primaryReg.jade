@@ -1,0 +1,145 @@
+extends layout
+
+block content
+
+	div.col-xs-10.col-xs-offset-1(style="text-position: center; background-color:#FFFFFF; opacity:1; border-radius: 20px 20px 20px 20px; padding-bottom:10px; padding-top:10px;")
+		h1(align="center", style="color: #000000; font-family: 'Lato', sans-serif;") Primary Register
+
+		center
+			
+
+		p(align="center", style="color: #000000;")
+		
+		
+		.col-sm-8.col-sm-offset-2
+			hr
+			.alert.alert-danger(role="alert", style="margin: 15px; display:none;")#userDoesNotExistAlert User Does not exist or password is wrong.
+			.alert.alert-warning(role="alert", style="margin: 15px; display:none;")#verifyAlert Please verify your account.
+
+			form(name="input", action="/zapp/primary/register", method="post", role="form", role="form")
+
+				.form-group
+					label(for="inputName") User Name
+					input(type="text", class="form-control", name="name", id="inputName", placeholder="Full Name")#inputName
+
+				.form-group
+					label(for="inputPassword") Password
+					input(type="password", class="form-control", id="inputPassword", name="password", placeholder="password")#password
+
+				.form-group
+					label(for="inputAvatar") Avatar
+
+				.form-group
+					.row
+						.radio
+						
+							.col-sm-3
+								label boy
+							.col-sm-3
+								input(type="radio", name="optionsRadios", id="optionsRadios1", value="boy", checked) 
+							
+						.radio
+							.col-sm-3
+								label girl
+							.col-sm-3
+								input(type="radio", name="optionsRadios", id="optionsRadios1", value="girl", checked)
+						
+					
+
+				#parentsemail
+					.form-group
+						label(for="inputParentEmail") Parents Email
+						input(type="text", class="form-control", id="inputParentEmail", name="parentemail")
+
+				#parentsLlogin(style="display: none;")
+					.row
+						.col-sm-8.col-sm-offset-2
+							h4 Parent Details
+
+							hr
+
+							.form-group
+								label(for="inputEmail") Email
+								input(type="email", class="form-control", id="inputEmail", name="parentEmail", placeholder="email")#inputEmail
+
+
+							.form-group
+								label(for="inputPassword") Password
+								input(type="password", class="form-control", id="inputPassword", name="parentPassword", placeholder="password")#password
+
+				center 
+				
+				hr
+
+				center
+					button.btn.btn-primary(type="submit", value="Submit").disabled#regButton Register
+					
+	p &nbsp;
+
+	script.
+		var baseUrl = '#{ajaxUrl}';
+
+		$(document).ready(function() {
+			$('#inputEmail').focus();
+		});
+
+		//check parent email
+		$("#inputParentEmail").
+			focusout(function() {
+				$('#regButton').attr('class', 'btn btn-primary');
+
+				var data = {
+					parentEmail: $('#inputParentEmail').val()
+				}
+
+				console.log(data);
+
+				$.ajax({
+					type: 'POST',
+					data: JSON.stringify(data),
+					contentType: 'application/json',
+					url: baseUrl + '/zapp/parentcheck',
+					success: function(data) {
+						//if exists
+						if(data) {
+							$( "#parentsemail" ).slideUp( "medium", function() {
+								$( "#parentsLlogin" ).slideDown( "medium", function() {});
+								});
+							
+						} else {
+							//user does not exist do not do anything
+						}
+					}
+				});
+			});
+
+		//email checking
+		$("#inputEmail").
+			focusout(function() {
+				//check if valid formate
+				var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+				if(!re.test($("#inputEmail").val())) {
+					$( "#emailInvalidFormatError" ).slideDown( "medium", function() {});
+				} else { 
+					//slide up invalid format
+					$( "#emailInvalidFormatError" ).slideUp( "medium", function() {});
+
+					//check if already exists
+					$.ajax({
+						type: 'POST',
+						data: JSON.stringify(data),
+						contentType: 'application/json',
+						url: baseUrl + '/zapps/emailcheck',
+						success: function(data) {
+							if(data) {
+								console.log('valid email address - email404');
+								$( "#emailNameTakenError" ).slideUp( "medium", function() {});
+							} else {
+								console.log('false');
+								console.log('Email Address Taken');
+								$( "#emailNameTakenError" ).slideDown( "medium", function() {});
+							}
+						}
+					});
+				}
+			});

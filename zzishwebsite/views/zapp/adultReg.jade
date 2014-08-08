@@ -1,0 +1,90 @@
+extends layout
+
+block content
+
+	div.col-xs-10.col-xs-offset-1(style="text-position: center; background-color:#FFFFFF; opacity:1; border-radius: 20px 20px 20px 20px; padding-bottom:10px; padding-top:10px;")
+		h1(align="center", style="color: #000000; font-family: 'Lato', sans-serif;") Adult Register
+
+		center
+			
+
+		p(align="center", style="color: #000000;")
+		
+		
+		.col-sm-8.col-sm-offset-2
+			hr
+			.alert.alert-danger(role="alert", style="margin: 15px; display:none;")#userDoesNotExistAlert User Does not exist or password is wrong.
+			.alert.alert-warning(role="alert", style="margin: 15px; display:none;")#verifyAlert Please verify your account.
+
+			form(name="input", action="/zapp/adult/register", method="post", role="form", role="form")
+				.form-group
+					label(for="inputEmail") Email Address
+					input(type="email", class="form-control", id="inputEmail", placeholder="email")#inputEmail
+					.alert.alert-danger(role="alert", style="margin-top: 15px; display:none;")#missingEmailError Please enter email.
+					.alert.alert-danger(role="alert", style="margin-top: 15px; display:none;")#emailNameTakenError Name taken.
+					.alert.alert-danger(role="alert", style="margin-top: 15px; display:none;")#emailInvalidFormatError Invalid Format.
+
+				.form-group
+					label(for="inputName") Full Name
+					input(type="text", class="form-control", name="name", id="inputName", placeholder="Full Name")#inputName
+
+				.form-group
+					label(for="inputPassword") Password
+					input(type="password", class="form-control", id="inputPassword", name="password", placeholder="password")#password
+
+				.form-group
+					label(for="inputAvatar") Avatar
+
+				.form-group
+					label(for="inputChildCode") Child Code
+					input(type="childCode", class="form-control", id="inputChildCode", name="childCode", placeholder="optional")
+
+				center 
+				
+				hr
+
+				center
+					p 
+						button.btn.btn-primary(type="submit", value="Submit") Register
+						
+					p
+					
+	p &nbsp;
+
+	script.
+		var baseUrl = '#{ajaxUrl}';
+
+		$(document).ready(function() {
+			$('#inputEmail').focus();
+		});
+
+		//email checking
+		$("#inputEmail").
+			focusout(function() {
+				//check if valid formate
+				var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+				if(!re.test($("#inputEmail").val())) {
+					$( "#emailInvalidFormatError" ).slideDown( "medium", function() {});
+				} else { 
+					//slide up invalid format
+					$( "#emailInvalidFormatError" ).slideUp( "medium", function() {});
+
+					//check if already exists
+					$.ajax({
+						type: 'POST',
+						data: JSON.stringify(data),
+						contentType: 'application/json',
+						url: baseUrl + '/zapps/emailcheck',
+						success: function(data) {
+							if(data) {
+								console.log('valid email address - email404');
+								$( "#emailNameTakenError" ).slideUp( "medium", function() {});
+							} else {
+								console.log('false');
+								console.log('Email Address Taken');
+								$( "#emailNameTakenError" ).slideDown( "medium", function() {});
+							}
+						}
+					});
+				}
+			});

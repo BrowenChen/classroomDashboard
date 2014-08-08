@@ -1,0 +1,152 @@
+extends ../web/layout
+
+block content
+	div(style="background-size: 100%; height: 100vh; width: 100vw;")
+		.row#errorView
+			.col-xs-8.col-xs-offset-2(Style="margin-top:20vh;")
+				.alert.alert-danger(role="alert", style="margin-top: 15px; display:none;")#generalError Something seems to have gone wrong! can you please check all the fields?
+
+				center
+					h2 Personal Details
+
+
+
+				.row
+					.col-xs-10.col-xs-offset-1
+						hr
+
+						form(role="form")
+							.form-group
+								label(for="inputEmail") Email Address
+								input(type="email", class="form-control", id="inputEmail", placeholder="email", value="#{email}")#inputEmail
+								.alert.alert-danger(role="alert", style="margin-top: 15px; display:none;")#missingEmailError Please enter email.
+								.alert.alert-danger(role="alert", style="margin-top: 15px; display:none;")#emailNameTakenError Name taken.
+								.alert.alert-danger(role="alert", style="margin-top: 15px; display:none;")#emailInvalidFormatError Invalid Format.
+
+							.form-group
+								label(for="inputNameFirst") First Name
+								input(type="text", class="form-control", placeholder="Full Name")#inputNameFirst
+
+							.form-group
+								label(for="inputNameLast") Last Name
+								input(type="text", class="form-control", placeholder="Full Name")#inputNameLast
+
+							.form-group
+								label(for="inputTel") Phone Number
+								input(type="text", class="form-control", id="inputTel", placeholder="Phone Number")#inputTel
+
+							.form-group
+								label(for="inputPassword") Password
+								input(type="password", class="form-control", id="inputPassword", placeholder="Password")#inputPassword
+								.alert.alert-danger(role="alert", style="margin-top: 15px; display:none;")#forgotPasswordError Please enter a password.
+
+				hr
+
+		.row
+			.col-xs-8.col-xs-offset-2(Style="margin-top:10vh;")
+				center
+					h2 Done!
+
+				hr
+				center
+					button(onclick="registerUser()").btn.btn-default Submit
+
+				<br><br><br>
+
+	script.
+		var baseUrl = '#{ajaxUrl}';
+
+		$(document).ready(function() {
+			$('#inputEmail').focus();
+		});
+
+		//email checking
+		$("#inputEmail").
+			focusout(function() {
+				//check if valid formate
+				var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+				if(!re.test($("#inputEmail").val())) {
+					$( "#emailInvalidFormatError" ).slideDown( "medium", function() {});
+				} else { 
+					//slide up invalid format
+					$( "#emailInvalidFormatError" ).slideUp( "medium", function() {});
+
+					var data = {
+						email: $("#inputEmail").val()
+					}
+
+					//check if already exists
+					$.ajax({
+						type: 'POST',
+						data: JSON.stringify(data),
+						contentType: 'application/json',
+						url: baseUrl + '/users/emailcheck',
+						success: function(data) {
+							if(data) {
+								console.log('valid email address - email404');
+								$( "#emailNameTakenError" ).slideUp( "medium", function() {});
+							} else {
+								console.log('false');
+								console.log('Email Address Taken');
+								$( "#emailNameTakenError" ).slideDown( "medium", function() {});
+							}
+						}
+					});
+				}
+			});
+
+		function registerUser() {
+			var error = false;
+
+			if($('#inputPassword').val() == "") {
+				$( "#forgotPasswordError" ).slideDown( "medium", function() {});
+				$( "#generalError" ).slideDown( "medium", function() {});
+
+				$(location).attr('href','#errorView');
+
+				error = true;
+			}
+			if($('#inputEmail').val() == "") {
+				$( "#missingEmailError" ).slideDown( "medium", function() {});
+				$( "#generalError" ).slideDown( "medium", function() {});
+
+				$(location).attr('href','#errorView');
+
+				error = true;
+			}
+
+			if(error == false){
+				var data = {
+					email: $('#inputEmail').val(),
+					firstname: $('#inputNameFirst').val(),
+					lastname: $('#inputNameLast').val(),
+					tel: $('#inputTel').val(),
+					password: $('#inputPassword').val(),
+
+				}
+
+				console.log(data);
+
+				$.ajax({
+						type: 'POST',
+						data: JSON.stringify(data),
+						contentType: 'application/json',
+						url: baseUrl + '/users/register',
+						success: function(data) {
+							console.log(data);
+
+							if(data) {
+								//true reg completed
+								console.log('GREAT SUCCESS!');
+								window.location = baseUrl + '/login?status=reg';
+
+							} else {
+								//reg failed
+								console.log('ERR!');
+								
+							}
+						}
+					});
+			}
+			
+		}

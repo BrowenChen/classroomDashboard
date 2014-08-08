@@ -1,0 +1,22 @@
+extends layout
+
+block content
+	.row
+		.col-xs-10.col-xs-offset-1(style="text-position: center; background-color:#FFFFFF; opacity:1; border-radius: 20px 20px 20px 20px; padding-bottom:10px; padding-top:10px;")
+			.row	
+				hr
+				h1(align="center", style="color: #000000; font-family: 'Lato', sans-serif;") Select Class
+				hr
+
+			each classroom in classrooms
+				.row
+					.col-xs-10.col-xs-offset-1.class-select-box
+						.col-xs-6
+							h3 #{classroom.name}
+							h4 #{classroom.year}
+						.col-xs-6
+							a(href="/zapp/primary/login/classroom/#{classroom.id}", style="float: right; margin-top: 25px;").btn.btn-primary Select	
+	.row
+		center
+			a(align="center", href="/zapp/primary/login/success}").btn.btn-primary Sign in as Self				
+

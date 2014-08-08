@@ -1,0 +1,59 @@
+extends ../web/layout
+
+block content
+	.container
+		.row
+			.col-xs-10.col-xs-offset-1.shell
+				.row
+					.alert.alert-success(role="alert", style="margin: 15px; display:none;")#regAlert You have been successfully registered - please verify your account NOTE AT THE MOMENT IT IS AUTO VERIFIED NEED TO MAKE IT WORK WITH AWS
+					.alert.alert-warning(role="alert", style="margin: 15px; display:none;")#verifyAlert Please verify your account.
+					.alert.alert-danger(role="alert", style="margin: 15px; display:none;")#notLoggedInAlert Please Login.
+					
+
+					.col-md-6.login-box
+						.row
+							h2 Sign up for Zzish	
+							h5 Start making your classroom smart!
+
+							hr
+								
+							form(role="form", action="/register", method="POST")
+								.form-group
+									input(type="email", class="form-control", id="emailinput", placeholder="Enter email", name="email")
+									.alert.alert-danger(role="alert", style="margin-top: 15px; display:none;")#missingEmailError Please enter email.
+									.alert.alert-danger(role="alert", style="margin-top: 15px; display:none;")#emailNameTakenError Name taken.
+									.alert.alert-danger(role="alert", style="margin-top: 15px; display:none;")#emailInvalidFormatError Invalid Format.
+								.form-group
+									button(type="submit",class="btn btn-default").btn.primary Register	
+					.col-md-6.login-box(style="border-left-style: solid; border-color: #ccc; border-width: 1px;")
+						.alert.alert-danger(role="alert", style="margin: 15px; display:none;")#userDoesNotExistAlert User Does not exist or password is wrong.
+						.row
+							h3 Login
+
+							hr
+
+							form(role="form", name="login", action="/login", method="POST")
+								.form-group
+									input(type="email", class="form-control", name="email", placeholder="Enter email")
+								.form-group
+									input(type="password", class="form-control", name="password", placeholder="Enter password")
+								.form-group
+									button(type="submit",class="btn btn-default").btn.primary Login	
+	script.
+
+		$(document).ready(function() {
+			var status = location.search.split('status=')[1];
+
+			if(status == 404) {
+				$( "#userDoesNotExistAlert" ).slideDown( "medium", function() {});
+			}
+			if(status == 'reg') {
+				$( "#regAlert" ).slideDown( "medium", function() {});
+			}
+			if(status == 'verify') {
+				$( "#verifyAlert" ).slideDown( "medium", function() {});
+			}
+			if(status == 'unauth') {
+				$( "#notLoggedInAlert" ).slideDown( "medium", function() {});
+			}
+		});
