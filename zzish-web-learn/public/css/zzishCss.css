@@ -1,0 +1,510 @@
+/* content css */
+
+.shell {
+    background-color: #FFFFFF;
+    padding: 15px;
+    font-family: 'Droid Sans', sans-serif;
+    box-shadow: 1px 1px 5px #888888;
+
+    margin-bottom: 20px;
+}
+
+.shell * {
+    color: #555;
+    padding-left: 15px;
+    font-family: 'Droid Sans', sans-serif;
+}
+
+.shell a {
+    font-weight:bold;
+    color: #9B69B3;
+}
+
+/* Landing Page */
+
+.landing {
+    font-family: 'Lato', sans-serif;
+}
+
+.landing h1, h2, h3, h4 {
+    color: #FFFFFF;   
+    font-family: 'Lato', sans-serif;
+}
+
+.landing span {
+    color: #C564F6;
+    font-family: 'Lato', sans-serif;
+}
+
+.landing-box {
+    padding: 21px;
+    font-family: 'Lato', sans-serif;
+}
+
+.landing-box:hover {
+    padding: 20px;
+    border-color: #C564F6;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 25px;
+    font-family: 'Lato', sans-serif;
+}
+
+/* Login */
+
+.login-box {
+    padding: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+/* register */
+
+.checkbox-form input[type="checkbox"] {
+    /* display: none; */
+}
+
+/* Products */
+
+.product-header span {
+    color: #65188B;   
+}
+
+.product-header h1 {
+    font-size:250%;
+}
+
+.product-feature {
+    margin-top: 50px;
+    font-family: 'Lato', sans-serif;
+    font-size:250%;
+    height: 50vh; 
+    width: 100vw;
+}
+
+.product-feature-container {
+    font-family: 'Lato', sans-serif;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 15px;
+    border-color: #C5C5C5;
+    height: 350px;
+    padding: 25px;
+}
+
+.product-feature span {
+    color: #C564F6;
+}
+
+.product-feature h1 {
+    font-size:250%;
+    color : #FFFFFF;   
+}
+
+.product-feature-box {
+    padding: 25px;
+}
+
+.product-btn {
+    width: 200px;
+    height: 50px;
+    padding-top: 12px;
+    font-family: 'Lato', sans-serif;
+}
+
+.view-box h1 {
+    font-family: 'Lato', sans-serif;
+    color: #555;
+}
+
+.resource-box {
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: #89008F;
+    padding: 15px;
+    height: 50px;
+    margin-right: 25px;
+    margin-left: 25px;
+    color: #89008F;
+}
+
+.product-select-box {
+    font-family: 'Lato', sans-serif;
+    padding: 21px;
+    margin-right: 25px;
+    margin-left: 25px;
+    color: #FFFFFF;
+}
+
+.product-select-box:hover {
+    font-family: 'Lato', sans-serif;
+    padding: 20px;
+    border-color: #C564F6;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 25px;
+    margin-right: 25px;
+    margin-left: 25px;
+    color: #FFFFFF;
+}
+
+/* Pricing Tables */
+
+.pricing-shell {
+    background-color: #FFFFFF;
+    padding: 15px;
+    font-family: 'Droid Sans', sans-serif;
+    box-shadow: 1px 1px 5px #888888;
+
+    margin-bottom: 20px;
+}
+
+.pricing-shell {
+    font-family: 'Droid Sans', sans-serif;
+}
+
+.pricing-shell h1, h2 {
+    color: #555;
+    font-family: 'Droid Sans', sans-serif;
+}
+
+
+
+.pricing-table {
+  border: solid 1px #dddddd;
+  margin-left: 0;
+  margin-bottom: 1.25rem; }
+  .pricing-table * {
+    list-style: none;
+    line-height: 1; }
+  .pricing-table .title {
+    background-color: #333333;
+    padding: 0.9375rem 1.25rem;
+    text-align: center;
+    color: #eeeeee;
+    font-weight: normal;
+    font-size: 2rem;
+    font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; }
+  .pricing-table .price {
+    background-color: #f6f6f6;
+    padding: 0.9375rem 1.25rem;
+    text-align: center;
+    color: #333333;
+    font-weight: normal;
+    font-size: 2rem;
+    font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; }
+  .pricing-table .description {
+    background-color: white;
+    padding: 0.9375rem;
+    text-align: center;
+    color: #777777;
+    font-size: 0.75rem;
+    font-weight: normal;
+    line-height: 1.4;
+    border-bottom: dotted 1px #dddddd; }
+  .pricing-table .bullet-item {
+    background-color: white;
+    padding: 0.9375rem;
+    text-align: center;
+    color: #333333;
+    font-size: 1.25rem;
+    font-weight: normal;
+    border-bottom: dotted 1px #dddddd; }
+  .pricing-table .cta-button {
+    background-color: white;
+    text-align: center;
+    padding: 1.25rem 1.25rem 0; }
+
+/* App dashboard */
+
+.top-bar {
+    border-style: solid;
+    border-width: 1px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-color: #C5C5C5;
+    padding: 25px;
+
+    height: 50px;
+
+    background: -webkit-linear-gradient(#441154, #2B0238); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#441154, #2B0238); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#441154, #2B0238); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#441154, #2B0238); /* Standard syntax (must be last) */
+
+
+}
+
+.top-bar-content {
+    margin-top: -17px;
+}
+
+.apps-dashboard-header h1 {
+    font-family: 'Lato', sans-serif;
+    height: 50px;
+}
+
+.dashboard-content {
+    border-style: solid;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-top-width: 0px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-color: #C5C5C5;
+    background-color: #FFFFFF;
+    padding: 25px;
+}
+
+.app-top {
+    border-style: solid;
+    border-width: 1px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-color: #C5C5C5;
+
+    height: 50px;
+
+    background: -webkit-linear-gradient(#F0F0F0 , #E0E0E0 ); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#F0F0F0 , #E0E0E0 ); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#F0F0F0 , #E0E0E0 ); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#F0F0F0 , #E0E0E0 ); /* Standard syntax (must be last) */
+}
+
+.app-content {
+    margin-top: 22px;
+}
+
+.app-bottom {
+    border-style: solid;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-top-width: 0px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-color: #C5C5C5;
+    padding: 25px;
+
+    margin-bottom: 25px;
+}
+
+.app-display-top {
+    border-style: solid;
+    border-width: 1px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-color: #C5C5C5;
+
+    background-color: #FFFFFF;
+
+    margin-right: 10px;
+}
+
+.app-display-bottom {
+    border-style: solid;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-top-width: 0px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-color: #C5C5C5;
+
+    background: -webkit-linear-gradient(#FcFcFc , #F0F0F0 ); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#FcFcFc , #F0F0F0 ); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#FcFcFc , #F0F0F0 ); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#FcFcFc , #F0F0F0 ); /* Standard syntax (must be last) */
+
+    margin-right: 10px;
+    color: #555;
+}
+
+.app-settings-menu {
+    background-color: #5A6B77;
+
+    border-style: solid;
+    border-left-width: 1px;
+    border-right-width: 0px;
+    border-bottom-width: 1px;
+    border-top-width: 0px;
+    border-bottom-left-radius: 5px;
+    border-color: #C5C5C5;
+    padding: 25px;
+
+    height: 550px;
+}
+
+/* right hand side of settings */
+
+.app-settings-header {
+    border-style: solid;
+    border-width: 1px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-color: #C5C5C5;
+    padding: 10px;
+    padding-left: 25px;
+
+
+    Font-family: 'Lato', sans-serif;
+    color: #555;
+
+    background-color: #ECECEC;
+}
+
+.app-settings-item {
+    border-style: solid;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-top-width: 0px;
+    border-color: #C5C5C5;
+    padding: 25px;
+    padding-left: 25px;
+
+    font-family: 'Lato', sans-serif;
+    color: #555;
+
+    background-color: #FFFFFF;
+}
+
+.app-settings-bottom,
+.app-settings-header,
+.app-settings-item * { 
+    color: #555;
+}
+
+.app-settings-bottom {
+    border-style: solid;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-top-width: 0px;
+    border-color: #C5C5C5;
+    padding: 25px;
+    padding-left: 25px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+
+    font-family: 'Lato', sans-serif;
+    color: #555;
+
+    background-color: #FFFFFF;
+}
+
+.app-menu-item {
+
+}
+
+.app-menu-item * {
+    color: white;
+}
+
+.app-settings-edit {
+    background-color: #FFFFFF;
+
+    border-style: solid;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-top-width: 0px;
+    border-bottom-right-radius: 5px;
+    border-color: #C5C5C5;
+    padding: 25px;
+
+    height: 550px;
+}
+
+.app-settings-edit-free {
+    background-color: #FFFFFF;
+
+    border-style: solid;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-top-width: 0px;
+    border-bottom-right-radius: 5px;
+    border-color: #C5C5C5;
+    padding: 25px;
+
+    height: 550px;
+}
+
+/* CREATE APPPPPP */
+
+.app-create-bottom {
+    border-style: solid;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-top-width: 0px;
+    border-color: #C5C5C5;
+    padding: 25px;
+    padding-left: 25px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+
+    font-family: 'Lato', sans-serif;
+    color: #555;
+
+    background-color: #FFFFFF;
+}
+
+.app-create-header {
+    border-style: solid;
+    border-width: 1px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-color: #C5C5C5;
+    padding: 10px;
+    padding-left: 25px;
+
+
+    Font-family: 'Lato', sans-serif;
+
+    background: -webkit-linear-gradient(#FcFcFc , #F0F0F0 ); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#FcFcFc , #F0F0F0 ); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#FcFcFc , #F0F0F0 ); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#FcFcFc , #F0F0F0 ); /* Standard syntax (must be last) */
+}
+
+/* billing */
+.billing-top {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #C5C5C5;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+
+    font-family: 'Lato', sans-serif;
+    color: #555;
+
+    background: -webkit-linear-gradient(#FcFcFc , #F0F0F0 ); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#FcFcFc , #F0F0F0 ); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#FcFcFc , #F0F0F0 ); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#FcFcFc , #F0F0F0 ); /* Standard syntax (must be last) */
+}
+
+.billing-content {
+    border-style: solid;
+    border-width: 1px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-color: #C5C5C5;
+    padding: 10px;
+    padding-left: 25px;
+    
+    color: #555;
+}
+
+.billing-content h3, h2, h1, h4 {
+    color: #555;
+    Font-family: 'Lato', sans-serif;
+}
+
+.billing-text {
+    
+}

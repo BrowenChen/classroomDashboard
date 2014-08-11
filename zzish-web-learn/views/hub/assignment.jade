@@ -1,0 +1,119 @@
+extends layout
+
+block content
+	.container
+		.col-lg-10.col-xs-offset-1
+			.row
+				.col-xs-8.apps-dashboard-header
+					h1(style="font-size:50px;") Zzish - Teacher Dashboard
+			.row.top-bar
+				.col-xs-6
+					h3(style="margin-top: -15px; margin-left: -15px;") Classroom 123123
+				.col-xs-6
+
+
+			.row.dashboard-content
+					.col-xs-10.col-xs-offset-1
+						.row.app-top
+							.col-xs-6(style="margin-top: 5px;")
+								h4 Add Action
+							.col-xs-6.app-content
+							
+
+						.row.app-bottom
+							.row
+								.col-xs-4
+									h4 App
+									<br>
+								.col-xs-8
+									select.form-control#appSelect
+										- each app in apps
+											option(value="#{app.id}") #{app.name}
+									<br>
+
+							.row(style="display: none;")#activitiesSelect
+								.col-xs-4
+									h4 Actions
+									<br>
+								.col-xs-8
+									select.form-control#activitiesSelectBox
+									<br>
+
+							.row(style="display: none;")#submitButton
+								<br>
+								center
+									button(onclick="addActivity()").btn.btn-primary.top-bar-content  + Add Action
+
+						
+					.col-xs-10.col-xs-offset-1
+						.row.app-top
+							.col-xs-6(style="margin-top: 5px;")
+								h4(style="color: #000000;") Lesson Plan
+							.col-xs-6.app-content
+							
+
+						.row.app-bottom
+							.col-xs-12
+								- each activity in activities
+									.row
+										.col-xs-6
+											h4 Activity
+										.col-xs-6
+											h4 #{activity.activity.name}
+								
+
+
+
+	&nbsp;
+
+	script.
+		var baseUrl = '#{ajaxUrl}';
+
+		$( "#appSelect" ).change(function() {
+			var appId = $('#appSelect').val();
+			var baseUrl = '#{ajaxUrl}';
+			
+			var data = {};
+			data.appId = appId;
+			console.log('waefawe')
+
+			$.ajax({
+				type: 'POST',
+				data: JSON.stringify(data),
+				contentType: 'application/json',
+				url: baseUrl + '/assignments/list',
+				success: function(data) {
+					console.log(JSON.stringify(data));
+
+					for(var i = 0 ; i < data.length; i ++){
+						$("#activitiesSelectBox").append(new Option(data[i].name, data[i].id));
+					}
+
+					$( "#activitiesSelect" ).slideDown( "medium", function() {}); 
+				}
+			});
+		});
+
+		$( "#activitiesSelect" ).change(function() {
+			$( "#submitButton" ).slideDown( "medium", function() {}); 
+		});
+
+		function addActivity() {
+			
+			var data = {};
+
+			data.classid = '#{classroomid}'
+			data.activityid = $('#activitiesSelectBox').val();
+
+			$.ajax({
+				type: 'POST',
+				data: JSON.stringify(data),
+				contentType: 'application/json',
+				url: baseUrl + '/assignments/add',
+				success: function(data) {
+					console.log(JSON.stringify(data));
+					location.reload();
+				}
+			});
+		}
+

@@ -1,0 +1,73 @@
+extends layout
+
+block content
+	.container
+		.col-lg-10.col-xs-offset-1
+			.row
+				.col-xs-8.apps-dashboard-header
+					h1(style="font-size:50px;") Zzish - Teacher Dashboard
+			.row.top-bar
+				.col-xs-1
+					.btn-group.top-bar-content  
+						button(style="float: left; margin-left: -32px;", type="button", data-toggle="dropdown").btn.btn-primary.dropdown-toggle
+							span.glyphicon.glyphicon-user
+						ul(style="float: left; margin-left: -32px;").dropdown-menu(role="menu")
+							li
+								a(href="/profile") Profile
+							li.divider
+							li
+								a(href="/logout") Logout
+				.col-xs-5
+					div(style="margin-top: -18px;")
+						h4(style="color:#FFFFFF;") Welcome back #{teacher.name}
+				.col-xs-6
+					a(href="/classroom/create")
+						button(style="float: right; margin-right: -32px;").btn.btn-primary.top-bar-content  + Create New Class
+
+			.row.dashboard-content
+					.col-xs-10.col-xs-offset-1
+						- each classroom in classrooms
+							.row.app-top
+								.col-xs-2(style="margin-top: 5px;")
+									h4(style="color: #000000;") Class #{classroom.name}
+								.col-xs-8
+									center
+										.btn-group.btn-group-justified
+											button(onclick="window.location.href='/dashboard/#{classroom.id}'", type="button", style="margin-top: 8px; width: 125px;").btn.btn-default View
+											button(type="button", onclick="window.location.href='/classroom/#{classroom.id}/live'",style="margin-top: 8px; width: 125px;").btn.btn-default Live Dashboard
+											button(onclick="window.location.href='/classroom/#{classroom.id}/assignments'", type="button", style="margin-top: 8px; width: 125px;").btn.btn-default Assignments
+
+								.col-xs-2.app-content
+									a(href="/classroom/#{classroom.id}/view", style="float: right; margin-right: -10px;").btn.btn-default.top-bar-content 
+										span.glyphicon.glyphicon-user
+									a(href="/classroom/#{classroom.id}/settings", style="float: right; margin-right: 10px;").btn.btn-default.top-bar-content 
+										span.glyphicon.glyphicon-cog
+									
+
+							.row.app-bottom
+								.col-xs-12
+									.row
+										.col-xs-4
+											.row.app-display-top
+												center
+													h1 29
+											.row.app-display-bottom
+												center
+													p(style="padding-top: 7px;") # Students
+										.col-xs-4
+											.row.app-display-top
+												center
+													h1 69%
+											.row.app-display-bottom
+												center
+													p(style="padding-top: 7px;") Class Average
+										.col-xs-4
+											.row.app-display-top
+												center
+													h1 :)
+											.row.app-display-bottom
+												center
+													p(style="padding-top: 7px;") Something Else
+					
+
+	&nbsp;

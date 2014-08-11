@@ -1,0 +1,82 @@
+extends layout
+
+block content
+
+	div.col-xs-10.col-xs-offset-1(style="text-position: center; background-color:#FFFFFF; opacity:1; border-radius: 20px 20px 20px 20px; padding-bottom:10px; padding-top:10px;")
+		h1(align="center", style="color: #000000; font-family: 'Lato', sans-serif;") Primary App Login
+
+		center
+			
+
+		p(align="center", style="color: #000000;")
+		
+		
+		.col-sm-8.col-sm-offset-2#standard
+			hr
+			.alert.alert-danger(role="alert", style="margin: 15px; display:none;")#userDoesNotExistAlert User Does not exist or password is wrong.
+			.alert.alert-warning(role="alert", style="margin: 15px; display:none;")#verifyAlert Please verify your account.
+
+			form(name="input", action="/zapp/primary/login", method="post", role="form", role="form")
+				.form-group
+					label(for="inputEmail") Email
+					input(type="email", class="form-control", id="inputEmail", name="email", placeholder="email")#inputEmail
+
+
+				.form-group
+					label(for="inputPassword") Password
+					input(type="password", class="form-control", id="inputPassword", name="password", placeholder="password")#password
+
+				center 
+				
+				hr
+
+				center
+					p 
+						button.btn.btn-primary(type="submit", value="Submit") Login
+						a.btn.btn-primary(onclick="regClassPin()", style="margin-left: 25px;") Use Class Pin
+						</br>
+						center
+							a(href="/zapp/primary/register", style="color: #000000") Sign Up
+						
+					p
+
+		.col-sm-8.col-sm-offset-2(style="display: none")#classpin
+			form(name="input", action="/zapp/primary/login/classpin", method="post", role="form", role="form")
+				.form-group
+					label(for="inputClassPin") Class Pin
+					input(type="text", class="form-control", name="classpin", placeholder="classpin")#inputClassPin
+
+				center 
+				
+				hr
+
+				center
+					p 
+						button.btn.btn-primary(type="submit", value="Submit") Login
+						button.btn.btn-primary(onclick="regClassPin()", style="margin-left: 25px;") Use Class Pin
+						</br>
+						center
+							a(href="/zapp/primary/register", style="color: #000000") Sign Up
+						
+					p
+					
+	p &nbsp;
+
+	script.
+
+		function regClassPin(){
+			$( "#standard" ).slideUp( "medium", function() {
+				$( "#classpin" ).slideDown( "medium", function() {});
+			});
+		}
+
+		$(document).ready(function() {
+			var status = location.search.split('status=')[1];
+
+			if(status == 404) {
+				$( "#userDoesNotExistAlert" ).slideDown( "medium", function() {});
+			}
+			if(status == 'verify') {
+				$( "#verifyAlert" ).slideDown( "medium", function() {});
+			}
+		});

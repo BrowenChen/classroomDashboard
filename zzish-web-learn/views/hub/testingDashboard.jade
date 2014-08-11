@@ -1,0 +1,215 @@
+extends dashboardLayout
+
+block content
+
+	html.
+		<style>
+			.greenBack{
+				background-color:#2ecc71;
+			}
+
+			.yellowBack{
+				background-color:#f1c40f;
+			}
+
+			.amberBack{
+				background-color: #e67e22;
+			}
+
+			.redBack{
+				background-color:#e74c3c;
+			}
+		</style>
+	div(style="margin-top: 35px;")
+		.row
+			section.col-lg-3.col-sm-3.connectedSortable
+
+					#loading-example.box.box-danger
+
+								center
+									#donut(style="width: 20vw;")
+					#loading-example.box.box-danger
+								center
+									#bar(style="width: 20vw;")
+					
+			section.col-lg-9.col-sm-9.connectedSortable
+				div.row(ng-controller="StudentController")
+					.box.box-primary
+						.box-header
+							.col-lg-12.col-sm-12(style='margin-top:10px;')
+								.col-lg-4
+									.pull-left.box-tools
+										.btn-group
+											a(ng-click="viewActive('pane')", style="width: 75px;", ng-class="{true: 'btn-primary', false: 'btn-default'}[isViewActive]").btn Pane
+											a(ng-click="viewActive('rows')", style="width: 75px;", ng-class="{false: 'btn-primary', true: 'btn-default'}[isViewActive]").btn Rows
+								.col-lg-4
+									.pull-center.box-tools
+										.btn-group
+											a(ng-click="predicate = 'currentTask'; reverse=!reverse; isTaskActive()", style="width: 75px;", ng-class="{true: 'btn-primary', false: 'btn-default'}[TaskActive]").btn Task
+											a(ng-click="predicate = 'percentage'; reverse=!reverse; isPerActive()", style="width: 75px;", ng-class="{true: 'btn-primary', false: 'btn-default'}[PerActive]").btn %
+											a(ng-click="predicate = 'name'; reverse=!reverse; isAbcActive()", style="width: 75px;", ng-class="{true: 'btn-primary', false: 'btn-default'}[AbcActive]").btn ABC
+
+								.col-lg-4
+									.pull-right.box-tools
+										.btn-group(style="margin-left: 15px;")
+											a(ng-click="greenFilter(); toggleGreen()", ng-class="{true: 'btn-success', false: 'btn-default'}[greenIsActive]").btn Green
+											a(ng-click="yellowFilter(); toggleYellow()", ng-class="{true: 'btn-yellow', false: 'btn-default'}[yellowIsActive]").btn Yellow
+											a(ng-click="amberFilter(); toggleAmber()", ng-class="{true: 'btn-warning', false: 'btn-default'}[amberIsActive]").btn Amber
+											a(ng-click="redFilter(); toggleRed()", ng-class="{true: 'btn-danger', false: 'btn-default'}[redIsActive]").btn Red
+
+
+
+							i.fa.fa-map-marker
+							
+						.box-body
+
+
+							section(style="min-height:600px;")#studentInfo
+								.col-lg-12.col-sm-12.col-xs-12
+									.row(ng-hide="!isViewActive")
+										.col-lg-2.col-sm-2.col-xs-6(ng-repeat="std in students | orderBy:predicate:reverse | filter:gradeRange", style="padding:0px; margin-bottom: 10px;")
+											//- Put in color here vvvv
+											.row.img-responsive.inner(ng-class="{amberBack: (std.percentage >= 25 && std.percentage <= 50), greenBack: (std.percentage >= 75 && std.percentage <= 100), redBack: (std.percentage >= 0 && std.percentage <= 25), yellowBack: (std.percentage >= 50 && std.percentage <= 75)}", style='width: 95%; margin: auto; height: inherit; border: 1px solid #367fa9; padding:2px;')
+													.col-sm-4
+														img.img-circle(src='/img/icons/face-samir.png', style='width: 25px;')
+													.col-sm-8
+														div
+															strong {{std.name}}
+															br
+															em
+																span.badge(style='background-color: green;') {{std.percentage}} %
+												.row.small-box.small-box-footer.img-responsive(style='background-color: #92D4ED; width: 95%; margin: auto; height: inherit; border: 1px solid #367fa9;')
+													a(style='color: black;')
+														span
+															em
+															| {{std.currentTask}}
+													hr(style="margin: 0;")
+													
+													div(style="margin: 5px;")
+														.glyphicon.glyphicon-remove-circle(style='color: red;')
+														.glyphicon.glyphicon-remove-circle(style='color: red;')
+														.glyphicon.glyphicon-ok-circle(style='color: green;')
+														.glyphicon.glyphicon-remove-circle(style='color: yellow;')
+														.glyphicon.glyphicon-ok-circle(style='color: green;')
+														.glyphicon.glyphicon-remove-circle(style='color: yellow;')
+														.glyphicon.glyphicon-ok-circle(style='color: green;')
+
+									.row(ng-hide="isViewActive")
+										.col-lg-12.col-sm-12.col-xs-12
+											.row(ng-repeat="std in students | orderBy:predicate:reverse | filter:gradeRange", style="margin:2px;")
+												.col-sm-1
+													center
+														img.img-circle.img-responsive(src='/img/icons/face-samir.png', style='width: 25px;')
+												.col-sm-1
+													center
+														strong {{std.name}}
+												.col-sm-2
+														p {{std.currentTask}}
+												.col-sm-1
+													center
+														em
+															span.badge(ng-class="{amberBack: (std.percentage >= 25 && std.percentage <= 50), greenBack: (std.percentage >= 75 && std.percentage <= 100), redBack: (std.percentage >= 0 && std.percentage <= 25), yellowBack: (std.percentage >= 50 && std.percentage <= 75)}") {{std.percentage}} %
+												.col-sm-2
+													.glyphicon.glyphicon-remove-circle(style='color: red;')
+													.glyphicon.glyphicon-remove-circle(style='color: red;')
+													.glyphicon.glyphicon-ok-circle(style='color: green;')
+													.glyphicon.glyphicon-remove-circle(style='color: yellow;')
+													.glyphicon.glyphicon-ok-circle(style='color: green;')
+													.glyphicon.glyphicon-remove-circle(style='color: yellow;')
+													.glyphicon.glyphicon-ok-circle(style='color: green;')
+												.col-sm-5
+													div.progress
+														div.progress-bar(ng-class="{amberBack: (std.percentage >= 25 && std.percentage <= 50), greenBack: (std.percentage >= 75 && std.percentage <= 100), redBack: (std.percentage >= 0 && std.percentage <= 25), yellowBack: (std.percentage >= 50 && std.percentage <= 75)}", style="width: {{std.percentage}}%")
+				div.row(ng-controller="StudentController")
+					.box.box-primary
+						.box-header
+							
+						.box-body
+
+							section(style="min-height:600px;")#studentInfo
+								.col-lg-12.col-sm-12.col-xs-12
+									.row
+										.col-sm-1.well(ng-repeat="task in allTasks | limitTo: 12", style="background-color:#ECF0F1; margin:0;")
+											| {{task}}
+									.row(ng-repeat='std in students | limitTo:10')
+										.col-sm-1.well(style="margin:0; background-color:#ECF0F1;") {{std.name}}
+
+										//- #cellClick.col-sm-1.well(ng-click="switchPane(std.name)", ng-repeat="task in allTasks | limitTo: 11", style="margin:0; border-radius:10px;", ng-class="{amberBack: (std.percentage >= 25 && std.percentage <= 50), greenBack: (std.percentage >= 75 && std.percentage <= 100), redBack: (std.percentage >= 0 && std.percentage <= 25), yellowBack: (std.percentage >= 50 && std.percentage <= 75)}")
+										//-	span {{std.percentage}}
+
+										#cellClick.col-sm-1.well(ng-click="switchPane(std.name)", ng-repeat="task in allTasks | limitTo: 11", style="margin:0; border-radius:10px;", ng-class="{amberBack: (std.percentage >= 25 && std.percentage <= 50), greenBack: (std.percentage >= 75 && std.percentage <= 100), redBack: (std.percentage >= 0 && std.percentage <= 25), yellowBack: (std.percentage >= 50 && std.percentage <= 75)}")
+											span {{std.percentage}}
+
+
+
+
+
+									br
+									br
+									.row
+										.jumbotron(style="border-radius:25px;")
+											.row
+												.col-sm-4
+													img.img-responsive.img-circle(src='/img/icons/dev-icon.png')
+												.col-sm-8
+													p {{selectedStudent}}
+
+											.row
+												br
+												p More student details here about {{selectedStudent}}
+
+						.box.footer
+
+
+										
+
+
+
+
+
+	link(rel="stylesheet", href="http://cdn.oesmith.co.uk/morris-0.5.1.css")
+
+	script(src='//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js')
+					
+	script(src='http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js')
+					
+	script(src='http://cdn.oesmith.co.uk/morris-0.4.1.min.js')
+
+
+
+
+	script.
+		
+		// - - - GRAPHS - - -
+
+		new Morris.Donut({
+			element: 'donut',
+			data: [
+				{label: "Exceeding", value: 50},
+				{label: "Passing", value: 30},
+				{label: "Failing", value: 20}
+			],
+			backgroundColor: '#ddd',
+			labelColor: '#060',
+			
+			colors: [
+				'#0BA462',
+				'#DADC86',
+				'#EB5254'
+			]
+		});
+
+		new Morris.Bar({
+			element: 'bar',
+			data: [
+
+
+				{ y: 'Metric 1', a: 100, b: 90, c: 25 },
+				{ y: 'Metric 2', a: 75, b: 65, c: 25 },
+				{ y: 'Metric 3', a: 50, b: 40, c: 25 }
+			],
+			xkey: 'y',
+			ykeys: ['a', 'b', 'c'],
+			labels: ['Exceeding', 'Passing', 'Failing'],
+			stacked: true
+		});

@@ -1,0 +1,64 @@
+extends layout
+
+block content
+	.container
+		.col-lg-10.col-xs-offset-1
+			.row
+				.col-xs-8.apps-dashboard-header
+					h1(style="font-size:50px;") Zzish - Teacher Dashboard
+			.row.top-bar
+				.col-xs-1
+					button(style="float: left; margin-left: -32px; margin-top: -16px;").btn.btn-primary.top-bar-content  
+							a(href="/dashboard")
+								span.glyphicon.glyphicon-th-large
+				.col-xs-5
+					div(style="margin-top: -18px;")
+						h4(style="color:#FFFFFF;") classroom / #{classroom.name}
+				.col-xs-6
+					a(href="/classroom/#{classroom.id}/app/add")
+						button(style="float: right; margin-right: -32px;").btn.btn-primary.top-bar-content  + Add App
+
+			.row.dashboard-content
+					- each app in classroom.apps
+
+						.col-xs-10.col-xs-offset-1
+							.row.app-top
+								.col-xs-6(style="margin-top: 5px;")
+									h4(style="color: #000000;") App: #{app.name}
+								.col-xs-6.app-content
+									//- a(href="/classroom/123/users", style="float: right; margin-right: -10px;").btn.btn-default.top-bar-content 
+									//- 	span.glyphicon.glyphicon-cog
+									a(href="/classroom/#{classroom.id}/assignments", style="float: right; margin-right: 10px;").btn.btn-default.top-bar-content 
+										| Assign Activity
+
+									
+									
+
+							.row.app-bottom
+								.col-xs-12
+								
+									.row
+										.col-xs-4
+											.row.app-display-top
+												center
+													h1 :]
+											.row.app-display-bottom
+												center
+													p(style="padding-top: 7px;") Another Thing
+										.col-xs-4
+											.row.app-display-top
+												center
+													h1 69%
+											.row.app-display-bottom
+												center
+													p(style="padding-top: 7px;") Complete
+										.col-xs-4
+											.row.app-display-top
+												center
+													h1 :)
+											.row.app-display-bottom
+												center
+													p(style="padding-top: 7px;") Something Else
+					
+
+	&nbsp;

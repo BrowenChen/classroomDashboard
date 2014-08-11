@@ -1,0 +1,18 @@
+extends layout
+
+block content
+	h1 erioahjew;foiahjwefio;
+
+	script.
+		$( document ).ready(function() {
+			$.ajax({
+				url: 'dummy.json',
+				async: false,
+				dataType: 'json',
+
+				success: function (response) {
+					console.log(JSON.stringify(response));
+				}
+			});
+		});
+
